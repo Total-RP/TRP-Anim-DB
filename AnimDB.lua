@@ -169,10 +169,10 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[YES_ID] = 2.00,
 		[NOPE_ID] = 3.50, -- Multi anim ...
 	},
-	["535052"] = {
+	["535052"] = { -- Male
 		[EXCLAME_ID] = 3.400,
-		[QUESTION_ID] = 4.0,
-		[TALK_ID] = 4.000,
+		[QUESTION_ID] = 4.2,
+		[TALK_ID] = 4.200,
 		[YES_ID] = 4,
 		[NOPE_ID] = 3.2,
 		[ACLAIM_ID] = 2.400,
@@ -186,10 +186,10 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[NOPE_ID] = 1.3,
 		[ACLAIM_ID] = 1.4,
 	},
-	["917116"] = {
+	["917116"] = { -- Male
 		[EXCLAME_ID] = 2.000,
-		[QUESTION_ID] = 1.600,
-		[TALK_ID] = 1.900,
+		[QUESTION_ID] = 1.800,
+		[TALK_ID] = 2.00,
 		[YES_ID] = 1.8,
 		[NOPE_ID] = 1.8,
 		[ACLAIM_ID] = 2.7,
