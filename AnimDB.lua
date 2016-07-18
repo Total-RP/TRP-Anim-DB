@@ -16,7 +16,7 @@
 -- limitations under the License.
 ----------------------------------------------------------------------------------
 
-local MAJOR, MINOR = "TRP-Dialog-Animation-DB", 1
+local MAJOR, MINOR = "TRP-Dialog-Animation-DB", 2
 
 local Lib = LibStub:NewLibrary(MAJOR, MINOR)
 
