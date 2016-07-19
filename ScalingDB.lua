@@ -982,10 +982,19 @@ local SCALE_MAPPING = {
 
 	["949470~1022938"] = { -- Orc female vs Troll Male
 		["me"] = {
-			["scale"] = 1.47,
+			["scale"] = 1.63,
 		},
 		["you"] = {
 			["scale"] = 1.45,
+		}
+	},
+
+	["949470~1018060"] = { -- Orc female vs Troll Female
+		["me"] = {
+			["scale"] = 1.56,
+		},
+		["you"] = {
+			["scale"] = 1.42,
 		}
 	},
 }

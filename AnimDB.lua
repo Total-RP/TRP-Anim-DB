@@ -248,15 +248,15 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		["186"] = 2,
 	},
 	-- Troll
-	["1018060"] = {
+	["1018060"] = { -- Female
 		[TALK_ID] = 2.45,
 		["185"] = 1.4,
 		["186"] = 1.6,
 		["65"] = 1.4,
-		["64"] = 2,
+		[EXCLAME_ID] = 2.3,
 		["68"] = 2.1,
 	},
-	["1022938"] = {
+	["1022938"] = { -- Male
 		[TALK_ID] = 2.400,
 		[EXCLAME_ID] = 2.600,
 		[QUESTION_ID] = 1.9,
