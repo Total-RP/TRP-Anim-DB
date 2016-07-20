@@ -39,6 +39,61 @@ if not Lib then return end
 -- 63 : /use
 -- 68 : /acclame
 
+local CHAR_TO_ID = {
+	HUMAN = {
+		FEMALE = "1000764",
+		MALE = "1011653",
+	},
+	NIGHT_ELF = {
+		FEMALE = "921844",
+		MALE = "974343",
+	},
+	DWARF = {
+		FEMALE = "950080",
+		MALE = "878772",
+	},
+	GNOME = {
+		FEMALE = "940356",
+		MALE = "900914",
+	},
+	DRAENEI = {
+		FEMALE = "1022598",
+		MALE = "1005887",
+	},
+	WORGEN = {
+		FEMALE = "307453",
+		MALE = "307454",
+	},
+	PANDAREN = {
+		FEMALE = "589715",
+		MALE = "535052",
+	},
+	ORC = {
+		FEMALE = "949470",
+		MALE = "917116",
+	},
+	GOBLIN = {
+		FEMALE = "119369",
+		MALE = "119376",
+	},
+	BLOOD_ELF = {
+		FEMALE = "1100258",
+		MALE = "1100087",
+	},
+	TAUREN = {
+		FEMALE = "986648",
+		MALE = "968705",
+	},
+	TROLL = {
+		FEMALE = "1018060",
+		MALE = "1022938",
+	},
+	UNDEAD = {
+		FEMALE = "997378",
+		MALE = "959310",
+	},
+}
+
 local EXCLAME_ID = "64";
 local QUESTION_ID = "65";
 local TALK_ID = "60";
@@ -59,7 +114,7 @@ local ANIMATION_SEQUENCE_DURATION = {
 local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 
 	-- NIGHT ELVES
-	["921844"] = {
+	[CHAR_TO_ID.NIGHT_ELF.FEMALE] = {
 		[EXCLAME_ID] = 2.000,
 		[QUESTION_ID] = 1.600,
 		[TALK_ID] = 2.1,
@@ -67,7 +122,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[NOPE_ID] = 1.5,
 		[ACLAIM_ID] = 2.4,
 	},
-	["974343"] = {
+	[CHAR_TO_ID.NIGHT_ELF.MALE] = {
 		[TALK_ID] = 1.900,
 		[EXCLAME_ID] = 1.9,
 		[QUESTION_ID] = 1.900,
@@ -76,7 +131,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[ACLAIM_ID] = 2,
 	},
 	-- DWARF
-	["878772"] = {
+	[CHAR_TO_ID.DWARF.MALE] = {
 		[EXCLAME_ID] = 1.800,
 		[QUESTION_ID] = 1.800,
 		[TALK_ID] = 2.000,
@@ -84,7 +139,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[NOPE_ID] = 1.9,
 		[ACLAIM_ID] = 3,
 	},
-	["950080"] = {
+	[CHAR_TO_ID.DWARF.FEMALE] = {
 		[TALK_ID] = 1.900,
 		[EXCLAME_ID] = 2.00,
 		[QUESTION_ID] = 1.800,
@@ -93,7 +148,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[ACLAIM_ID] = 2,
 	},
 	-- GNOMES
-	["900914"] = {
+	[CHAR_TO_ID.GNOME.MALE] = {
 		[EXCLAME_ID] = 1.800,
 		[QUESTION_ID] = 2.250,
 		[TALK_ID] = 3.900,
@@ -101,7 +156,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[NOPE_ID] = 1.0,
 		[ACLAIM_ID] = 2.0,
 	},
-	["940356"] = {
+	[CHAR_TO_ID.GNOME.FEMALE] = {
 		[EXCLAME_ID] = 1.850,
 		[QUESTION_ID] = 2.250,
 		[TALK_ID] = 3.900,
@@ -110,7 +165,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[ACLAIM_ID] = 2.0,
 	},
 	-- HUMAN
-	["1011653"] = {
+	[CHAR_TO_ID.HUMAN.MALE] = {
 		[EXCLAME_ID] = 1.800,
 		[QUESTION_ID] = 1.800,
 		[TALK_ID] = 2.000,
@@ -118,7 +173,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[NOPE_ID] = 3.2,
 		[ACLAIM_ID] = 2.400,
 	},
-	["1000764"] = {
+	[CHAR_TO_ID.HUMAN.FEMALE] = {
 		[EXCLAME_ID] = 2.700,
 		[QUESTION_ID] = 1.800,
 		[TALK_ID] = 2.650,
@@ -127,15 +182,15 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[ACLAIM_ID] = 2.300,
 	},
 	-- DRAENEI
-	["1022598"] = { -- Female
+	[CHAR_TO_ID.DRAENEI.MALE] = { -- Female
 		[TALK_ID] = 2.850,
 		[QUESTION_ID] = 1.850,
 		[EXCLAME_ID] = 2.000,
 		[YES_ID] = 1.9,
 		[NOPE_ID] = 2,
 		[ACLAIM_ID] = 2,
-	}, -- Male
-	["1005887"] = {
+	},
+	[CHAR_TO_ID.DRAENEI.FEMALE] = {
 		[TALK_ID] = 3.200,
 		[QUESTION_ID] = 1.850,
 		[EXCLAME_ID] = 3.000,
@@ -144,7 +199,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[ACLAIM_ID] = 1.8,
 	},
 	-- WORGEN
-	["307454"] = {
+	[CHAR_TO_ID.WORGEN.FEMALE] = {
 		[QUESTION_ID] = 3.7,
 		[TALK_ID] = 4.000,
 		[EXCLAME_ID] = 2.700,
@@ -152,16 +207,15 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[ACLAIM_ID] = 3.5,
 		[NOPE_ID] = 1.8,
 	},
-	["307453"] = {
-		[TALK_ID] = 4.000,
-		[EXCLAME_ID] = 2.700,
-		[QUESTION_ID] = 4.500,
-		[YES_ID] = 2.55,
-		[NOPE_ID] = 2.35,
-		[ACLAIM_ID] = 2.4,
+	[CHAR_TO_ID.WORGEN.MALE] = {
+		[EXCLAME_ID] = 3.00,
+		[QUESTION_ID] = 3.800,
+		[YES_ID] = 1.8,
+		[NOPE_ID] = 1.75,
+		[ACLAIM_ID] = 3.8,
 	},
 	-- PANDAREN
-	["589715"] = {
+	[CHAR_TO_ID.PANDAREN.FEMALE] = {
 		[TALK_ID] = 3.000,
 		[EXCLAME_ID] = 3,
 		[QUESTION_ID] = 3.8,
@@ -169,7 +223,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[YES_ID] = 2.00,
 		[NOPE_ID] = 3.50, -- Multi anim ...
 	},
-	["535052"] = { -- Male
+	[CHAR_TO_ID.PANDAREN.MALE] = { -- Male
 		[EXCLAME_ID] = 3.400,
 		[QUESTION_ID] = 4.2,
 		[TALK_ID] = 4.200,
@@ -178,7 +232,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[ACLAIM_ID] = 2.400,
 	},
 	-- ORCS
-	["949470"] = {
+	[CHAR_TO_ID.ORC.FEMALE] = {
 		[EXCLAME_ID] = 2.000,
 		[QUESTION_ID] = 1.600,
 		[TALK_ID] = 2.1,
@@ -186,7 +240,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[NOPE_ID] = 1.3,
 		[ACLAIM_ID] = 1.4,
 	},
-	["917116"] = { -- Male
+	[CHAR_TO_ID.ORC.MALE] = { -- Male
 		[EXCLAME_ID] = 2.000,
 		[QUESTION_ID] = 1.800,
 		[TALK_ID] = 2.00,
@@ -195,7 +249,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[ACLAIM_ID] = 2.7,
 	},
 	-- GOBLIN
-	["119376"] = {
+	[CHAR_TO_ID.GOBLIN.MALE] = {
 		[TALK_ID] = 4.3,
 		[QUESTION_ID] = 3.7,
 		[EXCLAME_ID] = 2.600,
@@ -203,7 +257,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[NOPE_ID] = 2.8,
 		[ACLAIM_ID] = 3.2,
 	},
-	["119369"] = {
+	[CHAR_TO_ID.GOBLIN.FEMALE] = {
 		[TALK_ID] = 4.2,
 		[QUESTION_ID] = 4.5,
 		[EXCLAME_ID] = 3.5,
@@ -212,65 +266,70 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[ACLAIM_ID] = 1.8,
 	},
 	-- Blood elves
-	["1100087"] = {
+	[CHAR_TO_ID.BLOOD_ELF.MALE] = {
 		[EXCLAME_ID] = 2.000,
 		[QUESTION_ID] = 2.00,
 		[TALK_ID] = 2.000,
-		["185"] = 1.3,
-		["68"] = 2.1,
-		["186"] = 1.3,
+		[YES_ID] = 1.3,
+		[ACLAIM_ID] = 2.1,
+		[NOPE_ID] = 1.5,
 	},
-	["110258"] = {
-		["185"] = 1.4,
-		["65"] = 1.4,
-		["68"] = 1.5,
-		["186"] = 2,
-		["64"] = 2.8,
-	},
-	["123081"] = {
-		[TALK_ID] = 2.000,
-		[QUESTION_ID] = 2.00,
+	[CHAR_TO_ID.BLOOD_ELF.FEMALE] = {
+		[YES_ID] = 1.7,
+		[QUESTION_ID] = 1.6,
+		[ACLAIM_ID] = 1.5,
+		[NOPE_ID] = 2.3,
+		[EXCLAME_ID] = 3.2,
 	},
 	-- Taurene
-	["986648"] = {
-		["185"] = 1.5,
-		["186"] = 1.8,
-		["65"] = 1.7,
-		["64"] = 1.9,
-		["68"] = 1.8,
+	[CHAR_TO_ID.TAUREN.FEMALE] = {
+		[YES_ID] = 1.5,
+		[NOPE_ID] = 1.8,
+		[QUESTION_ID] = 1.7,
+		[EXCLAME_ID] = 1.9,
+		[ACLAIM_ID] = 1.8,
 	},
-	["968705"] = {
+	[CHAR_TO_ID.TAUREN.MALE] = {
 		[TALK_ID] = 2.90,
 		[EXCLAME_ID] = 2.0,
 		[QUESTION_ID] = 1.8,
-		["185"] = 1.9,
-		["68"] = 1.9,
-		["186"] = 2,
+		[YES_ID] = 1.9,
+		[ACLAIM_ID] = 1.9,
+		[NOPE_ID] = 2,
 	},
 	-- Troll
-	["1018060"] = { -- Female
+	[CHAR_TO_ID.TROLL.FEMALE] = {
 		[TALK_ID] = 2.45,
-		["185"] = 1.4,
-		["186"] = 1.6,
-		["65"] = 1.4,
+		[YES_ID] = 1.4,
+		[NOPE_ID] = 1.6,
+		[QUESTION_ID] = 1.4,
 		[EXCLAME_ID] = 2.3,
-		["68"] = 2.1,
+		[ACLAIM_ID] = 2.1,
 	},
-	["1022938"] = { -- Male
+	[CHAR_TO_ID.TROLL.MALE] = {
 		[TALK_ID] = 2.400,
 		[EXCLAME_ID] = 2.600,
 		[QUESTION_ID] = 1.9,
-		["185"] = 1.6,
-		["68"] = 3,
-		["186"] = 1.6,
+		[YES_ID] = 1.6,
+		[ACLAIM_ID] = 3,
+		[NOPE_ID] = 1.6,
 	},
-	-- Scourge
-	["959310"] = { -- Male
-		["185"] = 1.8,
-		["186"] = 1.8,
-		["65"] = 2,
-		["64"] = 2.2,
-		["68"] = 2.1,
+	-- Undead
+	[CHAR_TO_ID.UNDEAD.MALE] = {
+		[YES_ID] = 2,
+		[NOPE_ID] = 2,
+		[QUESTION_ID] = 2.3,
+		[EXCLAME_ID] = 2.3,
+		[ACLAIM_ID] = 2.1,
+		[TALK_ID] = 2.6,
+	},
+	[CHAR_TO_ID.UNDEAD.FEMALE] = {
+		[YES_ID] = 2.0,
+		[NOPE_ID] = 2.0,
+		[QUESTION_ID] = 2,
+		[EXCLAME_ID] = 2,
+		[ACLAIM_ID] = 2.1,
+		[TALK_ID] = 2.5,
 	},
 
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
@@ -311,6 +370,12 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 	["124118"] = {
 		[TALK_ID] = 1.9,
 	},
+	-- Greymane
+	["1246857"] = {
+		[TALK_ID] = 2.000,
+		[EXCLAME_ID] = 2.000,
+		[QUESTION_ID] = 1.8,
+	},
 }
 
 ANIMATION_SEQUENCE_DURATION_BY_MODEL["579571"] = ANIMATION_SEQUENCE_DURATION_BY_MODEL["974343"];
@@ -327,6 +392,11 @@ local DEFAULT_ANIM_MAPPING = {
 	["?"] = 65,
 	["."] = 60,
 }
+local ALL_TO_EXCLAME = {
+	["!"] = 64,
+	["?"] = 65,
+	["."] = 64,
+}
 local ALL_TO_TALK = {
 	["!"] = 60,
 	["?"] = 60,
@@ -337,6 +407,7 @@ local ALL_TO_NONE = {
 	["."] = 0,
 }
 local ANIM_MAPPING = {};
+ANIM_MAPPING[CHAR_TO_ID.WORGEN.MALE] = ALL_TO_EXCLAME;
 ANIM_MAPPING["124456"] = ALL_TO_TALK;
 ANIM_MAPPING["930099"] = ALL_TO_TALK;
 ANIM_MAPPING["124495"] = ALL_TO_TALK;

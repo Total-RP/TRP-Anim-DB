@@ -27,6 +27,61 @@ if not Lib then return end
 -- Give the scaling between two models
 --*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
+local CHAR_TO_ID = {
+	HUMAN = {
+		FEMALE = "1000764",
+		MALE = "1011653",
+	},
+	NIGHT_ELF = {
+		FEMALE = "921844",
+		MALE = "974343",
+	},
+	DWARF = {
+		FEMALE = "950080",
+		MALE = "878772",
+	},
+	GNOME = {
+		FEMALE = "940356",
+		MALE = "900914",
+	},
+	DRAENEI = {
+		FEMALE = "1022598",
+		MALE = "1005887",
+	},
+	WORGEN = {
+		FEMALE = "307453",
+		MALE = "307454",
+	},
+	PANDAREN = {
+		FEMALE = "589715",
+		MALE = "535052",
+	},
+	ORC = {
+		FEMALE = "949470",
+		MALE = "917116",
+	},
+	GOBLIN = {
+		FEMALE = "119369",
+		MALE = "119376",
+	},
+	BLOOD_ELF = {
+		FEMALE = "1100258",
+		MALE = "1100087",
+	},
+	TAUREN = {
+		FEMALE = "986648",
+		MALE = "968705",
+	},
+	TROLL = {
+		FEMALE = "1018060",
+		MALE = "1022938",
+	},
+	UNDEAD = {
+		FEMALE = "997378",
+		MALE = "959310",
+	},
+}
+
 local DEFAULT_SCALE = {
 	me = {
 		scale = 1.45,
@@ -42,52 +97,125 @@ Lib.DEFAULT_SCALE = DEFAULT_SCALE;
 local SCALE_MAPPING = {
 
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+	-- Worgen female
+	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+	[CHAR_TO_ID.WORGEN.FEMALE .. "~" .. CHAR_TO_ID.HUMAN.FEMALE] = {
+		["me"] = {
+			["scale"] = 1.42,
+		},
+		["you"] = {
+			["scale"] = 1.67,
+		}
+	},
+
+	[CHAR_TO_ID.WORGEN.FEMALE .. "~" .. CHAR_TO_ID.HUMAN.MALE] = {
+		["me"] = {
+			["scale"] = 1.49,
+		},
+		["you"] = {
+			["scale"] = 1.61,
+		}
+	},
+
+	[CHAR_TO_ID.WORGEN.FEMALE .. "~" .. CHAR_TO_ID.WORGEN.MALE] = {
+		["me"] = {
+			["scale"] = 1.53,
+		},
+		["you"] = {
+			["scale"] = 1.49,
+		}
+	},
+
+	[CHAR_TO_ID.WORGEN.FEMALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.FEMALE] = {
+		["me"] = {
+			["scale"] = 1.45,
+		},
+		["you"] = {
+			["scale"] = 1.45,
+		}
+	},
+
+	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+	-- Worgen male
+	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+	[CHAR_TO_ID.WORGEN.MALE .. "~" .. CHAR_TO_ID.HUMAN.FEMALE] = {
+		["me"] = {
+			["scale"] = 1.39,
+		},
+		["you"] = {
+			["scale"] = 1.62,
+		}
+	},
+
+	[CHAR_TO_ID.WORGEN.MALE .. "~" .. CHAR_TO_ID.HUMAN.MALE] = {
+		["me"] = {
+			["scale"] = 1.52,
+		},
+		["you"] = {
+			["scale"] = 1.56,
+		}
+	},
+
+	[CHAR_TO_ID.WORGEN.MALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.FEMALE] = {
+		["me"] = {
+			["scale"] = 1.45,
+		},
+		["you"] = {
+			["scale"] = 1.45,
+		}
+	},
+
+	[CHAR_TO_ID.WORGEN.MALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.FALE] = {
+		["me"] = {
+			["scale"] = 1.45,
+		},
+		["you"] = {
+			["scale"] = 1.35,
+		}
+	},
+
+	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 	-- Human female
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
 	-- VS player models
-	["1000764~1011653"] = {
+	[CHAR_TO_ID.HUMAN.FEMALE .. "~" .. CHAR_TO_ID.HUMAN.MALE] = {
 		["me"] = {
 			["scale"] = 1.56,
 		},
 	},
-	["1000764~940356"] = {
+	[CHAR_TO_ID.HUMAN.FEMALE .. "~" .. CHAR_TO_ID.GNOME.FEMALE] = {
 		["you"] = {
 			["scale"] = 2.2,
-			["offset"] = 0.195,
-			["feet"] = 0.42,
 		},
 	},
-	["1000764~1022598"] = {
+	[CHAR_TO_ID.HUMAN.FEMALE .. "~" .. CHAR_TO_ID.DRAENEI.MALE] = {
 		["you"] = {
 			["scale"] = 1.27,
-			["feet"] = 0.41,
 		},
 		["me"] = {
 			["scale"] = 1.63,
 		},
 	},
-	["1000764~1005887"] = {
+	[CHAR_TO_ID.HUMAN.FEMALE .. "~" .. CHAR_TO_ID.DRAENEI.FEMALE] = {
 		["me"] = {
 			["scale"] = 1.81,
 		},
 		["you"] = {
 			["scale"] = 1.31,
-			["offset"] = 0.205,
-			["feet"] = 0.43,
 		},
 	},
-	["1000764~535052"] = {
+	[CHAR_TO_ID.HUMAN.FEMALE .. "~" .. CHAR_TO_ID.PANDAREN.MALE] = {
 		["me"] = {
 			["scale"] = 1.58,
 		},
 		["you"] = {
-			["offset"] = 0.205,
 			["scale"] = 1.13,
-			["feet"] = 0.43,
 		},
 	},
-	["1000764~589715"] = {
+	[CHAR_TO_ID.HUMAN.FEMALE .. "~" .. CHAR_TO_ID.PANDAREN.FEMALE] = {
 		["me"] = {
 			["scale"] = 1.58,
 		},
@@ -95,116 +223,43 @@ local SCALE_MAPPING = {
 			["scale"] = 1.38,
 		},
 	},
-	["1000764~921844"] = {
+	[CHAR_TO_ID.HUMAN.FEMALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.FEMALE] = {
 		["me"] = {
 			["scale"] = 1.61,
 		},
 		["you"] = {
-			["offset"] = 0.215,
 			["scale"] = 1.32,
-			["feet"] = 0.42,
 		},
 	},
-	["1000764~974343"] = {
+	[CHAR_TO_ID.HUMAN.FEMALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.MALE] = {
 		["me"] = {
 			["scale"] = 1.61,
 		},
 		["you"] = {
 			["scale"] = 1.27,
-			["offset"] = 0.215,
-			["feet"] = 0.41,
 		},
 	},
-	["1000764~900914"] = {
+	[CHAR_TO_ID.HUMAN.FEMALE .. "~" .. CHAR_TO_ID.GNOME.MALE] = {
 		["you"] = {
 			["scale"] = 2,
-			["offset"] = 0.185,
-			["feet"] = 0.41,
 		},
 	},
-	["1000764~950080"] = {
+	[CHAR_TO_ID.HUMAN.FEMALE .. "~" .. CHAR_TO_ID.DWARF.FEMALE] = {
 		["you"] = {
 			["scale"] = 1.61,
-			["offset"] = 0.245,
 		},
 	},
-	["1000764~878772"] = {
+	[CHAR_TO_ID.HUMAN.FEMALE .. "~" .. CHAR_TO_ID.DWARF.MALE] = {
 		["you"] = {
 			["scale"] = 1.34,
-			["offset"] = 0.175,
-			["feet"] = 0.42,
 		},
 	},
-	["1000764~307453"] = {
+	[CHAR_TO_ID.HUMAN.FEMALE .. "~" .. CHAR_TO_ID.GOBLIN.MALE] = {
 		["you"] = {
-			["offset"] = 0.215,
-			["scale"] = 1.05,
-			["feet"] = 0.42,
-		},
-		["me"] = {
-			["scale"] = 1.66,
-		},
-	},
-	["1000764~307454"] = {
-		["me"] = {
-			["scale"] = 1.74,
-		},
-		["you"] = {
-			["scale"] = 1.27,
-		},
-	},
-	["1000764~119376"] = {
-		["you"] = {
-			["offset"] = 0.195,
 			["scale"] = 1.91,
-			["feet"] = 0.41,
 		},
 		["me"] = {
 			["scale"] = 1.4,
-		},
-	},
-
-	-- VS NPC
-	["1000764~creature\\velen2\\velen2.m2"] = {
-		["me"] = {
-			["scale"] = 1.97,
-		},
-		["you"] = {
-			["scale"] = 1.06,
-		},
-	},
-	["1000764~creature\\dragondeepholm\\dragondeepholmmount.m2"] = {
-		["you"] = {
-			["offset"] = 0.325,
-			["scale"] = 0.75,
-			["feet"] = 0.4,
-		},
-	},
-	["1000764~creature\\humanmalekid\\humanmalekid.m2"] = {
-		["you"] = {
-			["scale"] = 1.02,
-			["offset"] = 0.115,
-			["feet"] = 0.45,
-		},
-	},
-	["1000764~creature\\kingvarianwrynn\\kingvarianwrynn.m2"] = {
-		["me"] = {
-			["scale"] = 1.52,
-		},
-		["you"] = {
-			["scale"] = 1.29,
-		},
-	},
-	["1000764~character\\broken\\male\\brokenmale.m2"] = {
-		["you"] = {
-			["scale"] = 1.3,
-		},
-	},
-	["1000764~creature\\humanfemalekid\\humanfemalekid.m2"] = {
-		["you"] = {
-			["offset"] = 0.185,
-			["feet"] = 0.43,
-			["scale"] = 2.25,
 		},
 	},
 
@@ -213,82 +268,73 @@ local SCALE_MAPPING = {
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
 	-- VS player models
-	["1011653~940356"] = {
+	[CHAR_TO_ID.HUMAN.MALE .. "~" .. CHAR_TO_ID.GNOME.FEMALE] = {
 		["you"] = {
-			["height"] = 1.99,
+			["scale"] = 1.99,
 		},
 		["me"] = {
-			["height"] = 1.29,
+			["scale"] = 1.29,
 		},
 	},
-	["1011653~878772"] = {
+	[CHAR_TO_ID.HUMAN.MALE .. "~" .. CHAR_TO_ID.DWARF.MALE] = {
 		["me"] = {
-			["height"] = 1.29,
+			["scale"] = 1.29,
 		},
 		["you"] = {
-			["height"] = 1.55,
+			["scale"] = 1.55,
 		},
 	},
-	["1011653~589715"] = {
+	[CHAR_TO_ID.HUMAN.MALE .. "~" .. CHAR_TO_ID.PANDAREN.FEMALE] = {
 		["you"] = {
-			["height"] = 1.350,
+			["scale"] = 1.350,
 		},
 		["me"] = {
-			["height"] = 1.399,
+			["scale"] = 1.399,
 		},
 	},
-	["1011653~921844"] = {
+	[CHAR_TO_ID.HUMAN.MALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.FEMALE] = {
 		["you"] = {
-			["height"] = 1.299,
+			["scale"] = 1.299,
 		},
 		["me"] = {
-			["height"] = 1.389,
+			["scale"] = 1.389,
 		},
 	},
-	["1011653~119369"] = {
+	[CHAR_TO_ID.HUMAN.MALE .. "~" .. CHAR_TO_ID.GOBLIN.FEMALE] = {
 		["me"] = {
-			["height"] = 1.279,
+			["scale"] = 1.279,
 		},
 		["you"] = {
-			["height"] = 1.959,
+			["scale"] = 1.959,
 		},
 	},
-	["1011653~950080"] = {
+	[CHAR_TO_ID.HUMAN.MALE .. "~" .. CHAR_TO_ID.DWARF.FEMALE] = {
 		["you"] = {
-			["height"] = 1.599,
+			["scale"] = 1.599,
 		},
 		["me"] = {
-			["height"] = 1.279,
+			["scale"] = 1.279,
 		},
 	},
-	["1011653~917116"] = {
+	[CHAR_TO_ID.HUMAN.MALE .. "~" .. CHAR_TO_ID.ORC.MALE] = {
 		["me"] = {
-			["height"] = 1.289,
+			["scale"] = 1.289,
 		},
 		["you"] = {
-			["height"] = 1.429,
+			["scale"] = 1.429,
 		},
 	},
-	["1011653~1022598"] = {
+	[CHAR_TO_ID.HUMAN.MALE .. "~" .. CHAR_TO_ID.DRAENEI.MALE] = {
 		["me"] = {
 			["scale"] = 1.65,
 		},
 	},
-	["1011653~535052"] = {
+	[CHAR_TO_ID.HUMAN.MALE .. "~" .. CHAR_TO_ID.PANDAREN.MALE] = {
 		["you"] = {
 			["scale"] = 1.15,
-			["offset"] = 0.205,
 		},
 	},
-	["1011653~307454"] = {
-		["you"] = {
-			["scale"] = 1.24,
-		},
-		["me"] = {
-			["scale"] = 1.69,
-		},
-	},
-	["1011653~974343"] = {
+	[CHAR_TO_ID.HUMAN.MALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.MALE] = {
 		["me"] = {
 			["scale"] = 1.59,
 		},
@@ -297,465 +343,323 @@ local SCALE_MAPPING = {
 		},
 	},
 
-	-- VS NPC
-	["1011653~creature\\siberiantiger\\siberiantiger.m2"] = {
-		["you"] = {
-			["offset"] = 0.105,
-			["scale"] = 1.35,
-		},
-	},
-	["1011653~creature\\humlblacksmith\\humlblacksmith.m2"] = {
-		["you"] = {
-			["scale"] = 1.11,
-			["offset"] = 0.135,
-			["feet"] = 0.42,
-		},
-	},
-	["1011653~creature\\humanmalekid\\humanmalekid.m2"] = {
-		["you"] = {
-			["offset"] = 0.135,
-			["scale"] = 0.95,
-		},
-	},
-	["1011653~creature\\druidcat\\druidcat.m2"] = {
-		["you"] = {
-			["scale"] = 2.45,
-			["offset"] = 0.125,
-		},
-	},
-	["1011653~creature\\anduin\\anduin.m2"] = {
-		["you"] = {
-			["scale"] = 1.61,
-		},
-	},
-	["1011653~creature\\draeneimalekid\\draeneimalekid.m2"] = {
-		["you"] = {
-			["scale"] = 2.95,
-		},
-	},
-	["1011653~creature\\humanfemalekid\\humanfemalekid.m2"] = {
-		["you"] = {
-			["scale"] = 2.45,
-		},
-	},
-	["1011653~creature\\draeneifemalekid\\draeneifemalekid.m2"] = {
-		["you"] = {
-			["scale"] = 2.45,
-		},
-	},
-	["1011653~creature\\velen2\\velen2.m2"] = {
-		["you"] = {
-			["height"] = 0.969,
-		},
-		["me"] = {
-			["height"] = 1.809,
-		},
-	},
-	["1011653~creature\\impoutland\\impoutland.m2"] = {
-		["you"] = {
-			["height"] = 2,
-		},
-		["me"] = {
-			["height"] = 1.299,
-		},
-	},
-	["1011653~creature\\arakkoa2\\arakkoa2.m2"] = {
-		["you"] = {
-			["height"] = 1.12,
-		},
-		["me"] = {
-			["height"] = 1.49,
-		},
-	},
-	["1011653~creature\\salamander\\salamandermale.m2"] = {
-		["me"] = {
-			["height"] = 1.639,
-		},
-		["you"] = {
-			["height"] = 1.019,
-		},
-	},
-
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 	-- Draenei male
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
 	-- VS player models
-	["1005887~307453"] = {
-		["me"] = {
-			["offset"] = 0.205,
-		},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.WORGEN.FEMALE] = {
 		["you"] = {
 			["scale"] = 1.23,
 		},
 	},
-	["1005887~950080"] = {
-		["me"] = {
-			["offset"] = 0.185,
-		},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.DWARF.FEMALE] = {
 		["you"] = {
 			["scale"] = 2.1,
-			["offset"] = 0.245,
 		},
 	},
-	["1005887~900914"] = {
-		["me"] = {
-			["offset"] = 0.205,
-		},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.GNOME.MALE] = {
 		["you"] = {
 			["scale"] = 2.52,
-			["feet"] = 0.43,
 		},
 	},
-	["1005887~589715"] = {
-		["me"] = {
-			["offset"] = 0.185,
-		},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.PANDAREN.FEMALE] = {
 		["you"] = {
 			["scale"] = 1.82,
-			["offset"] = 0.245,
 		},
 	},
-	["1005887~535052"] = {
-		["me"] = {
-			["offset"] = 0.205,
-		},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.PANDAREN.MALE] = {
 		["you"] = {
 			["scale"] = 1.31,
 		},
 	},
-	["1005887~110258"] = {
-		["me"] = {
-			["offset"] = 0.195,
-		},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.BLOOD_ELF.MALE] = {
 		["you"] = {
 			["scale"] = 1.7,
-			["offset"] = 0.245,
 		},
 	},
-	["1005887~921844"] = {
-		["me"] = {
-			["offset"] = 0.205,
-		},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.FEMALE] = {
 		["you"] = {
 			["scale"] = 1.57,
 		},
 	},
-	["1005887~940356"] = {
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.GNOME.FEMALE] = {
 		["you"] = {
-			["offset"] = 0.225,
 			["scale"] = 2.7599,
-			["feet"] = 0.42,
 		},
 		["me"] = {
 			["scale"] = 1.44,
-			["offset"] = 0.195,
 		},
 	},
-	["1005887~878772"] = {
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.DWARF.MALE] = {
 		["you"] = {
-			["offset"] = 0.195,
 			["scale"] = 1.9,
-			["feet"] = 0.41,
-		},
-		["me"] = {
-			["offset"] = 0.205,
 		},
 	},
-	["1005887~119369"] = {
-		["me"] = {
-			["offset"] = 0.205,
-		},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.GOBLIN.FEMALE] = {
 		["you"] = {
-			["offset"] = 0.195,
 			["scale"] = 2.25,
-			["feet"] = 0.42,
 		},
 	},
-	["1005887~974343"] = {
-		["me"] = {
-			["offset"] = 0.195,
-		},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.MALE] = {
 		["you"] = {
 			["scale"] = 1.42,
-			["offset"] = 0.225,
 		},
 	},
-	["1005887~1022598"] = {
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.GOBLIN.MALE] = {
 		["you"] = {
-			["scale"] = 1.44,
-		},
-		["me"] = {
-			["offset"] = 0.195,
-			["scale"] = 1.44,
-		},
-	},
-	["1005887~1011653"] = {
-		["you"] = {
-			["scale"] = 1.61,
-		},
-		["me"] = {
-			["offset"] = 0.195,
-			["scale"] = 1.38,
-		},
-	},
-	["1005887~119376"] = {
-		["me"] = {
-			["offset"] = 0.185,
-		},
-		["you"] = {
-			["offset"] = 0.215,
 			["scale"] = 2.399,
-			["feet"] = 0.41,
 		},
 	},
-	["1005887~307454"] = {
-		["me"] = {
-			["offset"] = 0.195,
-		},
-		["you"] = {
-			["scale"] = 1.38,
-			["offset"] = 0.235,
-		},
-	},
-	["1005887~949470"] = {
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.ORC.FEMALE] = {
 		["me"] = {
 			["scale"] = 1.42,
 		},
 		["you"] = {
 			["scale"] = 1.68,
-			["offset"] = 0.195,
 		},
 	},
-	["1005887~968705"] = {
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.DRAENEI.FEMALE] = {
 		["me"] = {
-			["scale"] = 1.56,
+			["scale"] = 1.43,
 		},
 		["you"] = {
-			["scale"] = 1.05,
-		},
+			["scale"] = 1.48,
+		}
 	},
-
-	-- VS NPC
-	["1005887~creature\\agronn\\agronn.m2"] = {
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.WORGEN.MALE] = {
 		["me"] = {
-			["scale"] = 3.44999999999999,
-		},
-		["you"] = {
-			["scale"] = 1.2,
-		},
-	},
-	["1005887~creature\\ogredraenor\\ogredraenor.m2"] = {
-		["me"] = {
-			["scale"] = 2.15,
-		},
-		["you"] = {
 			["scale"] = 1.45,
 		},
+		["you"] = {
+			["scale"] = 1.65,
+		}
 	},
-	["1005887~character\\broken\\male\\brokenmale.m2"] = {
+
+	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+	-- Draenei female
+	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.HUMAN.MALE] = {
 		["me"] = {
-			["offset"] = 0.215,
+			["scale"] = 1.4,
+		},
+		["you"] = {
+			["scale"] = 1.64,
+		}
+	},
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.FEMALE] = {
+		["me"] = {
+			["scale"] = 1.39,
+		},
+		["you"] = {
+			["scale"] = 1.54,
+		}
+	},
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.MALE] = {
+		["me"] = {
+			["scale"] = 1.46,
+		},
+		["you"] = {
+			["scale"] = 1.41,
+		}
+	},
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.UNDEAD.MALE] = {
+		["me"] = {
+			["scale"] = 1.37,
 		},
 		["you"] = {
 			["scale"] = 1.66,
-			["offset"] = 0.225,
-		},
+		}
 	},
-	["1005887~creature\\humanfemalekid\\humanfemalekid.m2"] = {
-		["you"] = {
-			["scale"] = 3.38,
-			["feet"] = 0.43,
-			["offset"] = 0.215,
-			["facing"] = 0.73,
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.BLOOD_ELF.FEMALE] = {
+		["me"] = {
+			["scale"] = 1.36,
 		},
-	},
-	["1005887~creature\\humanmalekid\\humanmalekid.m2"] = {
 		["you"] = {
+			["scale"] = 1.63,
+		}
+	},
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.ORC.FEMALE] = {
+		["me"] = {
+			["scale"] = 1.38,
+		},
+		["you"] = {
+			["scale"] = 1.62,
+		}
+	},
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.GNOME.FEMALE] = {
+		["me"] = {
+			["scale"] = 1.44,
+		},
+		["you"] = {
+			["scale"] = 2.5599,
+		}
+	},
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.GNOME.MALE] = {
+		["me"] = {
+			["scale"] = 1.36,
+		},
+		["you"] = {
+			["scale"] = 2.66,
+		}
+	},
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.DWARF.MALE] = {
+		["me"] = {
+			["scale"] = 1.32,
+		},
+		["you"] = {
+			["scale"] = 2.01,
+		}
+	},
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.ORC.MALE] = {
+		["me"] = {
+			["scale"] = 1.41,
+		},
+		["you"] = {
+			["scale"] = 1.58,
+		}
+	},
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.BLOOD_ELF.MALE] = {
+		["me"] = {
+			["scale"] = 1.41,
+		},
+		["you"] = {
+			["scale"] = 1.57,
+		}
+	},
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.DWARF.FEMALE] = {
+		["me"] = {
+			["scale"] = 1.27,
+		},
+		["you"] = {
+			["scale"] = 1.83,
+		}
+	},
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.WORGEN.MALE] = {
+		["me"] = {
+			["scale"] = 1.45,
+		},
+		["you"] = {
+			["scale"] = 1.57,
+		}
+	},
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.PANDAREN.FEMALE] = {
+		["me"] = {
 			["scale"] = 1.4,
-			["facing"] = 0.79,
-			["offset"] = 0.125,
-			["feet"] = 0.45,
-		},
-	},
-	["1005887~creature\\kingvarianwrynn\\kingvarianwrynn.m2"] = {
-		["me"] = {
-			["offset"] = 0.195,
 		},
 		["you"] = {
-			["scale"] = 1.37,
-			["offset"] = 0.245,
-		},
+			["scale"] = 1.61,
+		}
 	},
-	["1005887~creature\\arakkoaoutland\\arakkoaoutland.m2"] = {
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.PANDAREN.MALE] = {
 		["me"] = {
-			["offset"] = 0.205,
+			["scale"] = 1.45,
+		},
+		["you"] = {
+			["scale"] = 1.39,
+		}
+	},
+
+	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.WORGEN.FEMALE] = {
+		["me"] = {
+			["scale"] = 1.38,
 		},
 		["you"] = {
 			["scale"] = 1.6,
-			["offset"] = 0.215,
-		},
+		}
 	},
 
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 	-- Gnome male
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-	-- VS player models
-	["900914~878772"] = {
+
+	[CHAR_TO_ID.GNOME.MALE .. "~" .. CHAR_TO_ID.DWARF.MALE] = {
 		["me"] = {
 			["scale"] = 1.58,
-			["offset"] = 0.195,
 		},
 		["you"] = {
 			["scale"] = 1.08,
-			["offset"] = 0.185,
 		},
 	},
-	["900914~1011653"] = {
+	[CHAR_TO_ID.GNOME.MALE .. "~" .. CHAR_TO_ID.HUMAN.MALE] = {
 		["me"] = {
 			["scale"] = 2.06,
-			["offset"] = 0.185,
-			["feet"] = 0.42,
 		},
 		["you"] = {
 			["scale"] = 1.3,
-			["offset"] = 0.225,
 		},
 	},
-	["900914~900914"] = {
-		["me"] = {
-			["offset"] = 0.195,
-		},
-		["you"] = {
-			["offset"] = 0.205,
-		},
-	},
-	["900914~307454"] = {
+	[CHAR_TO_ID.GNOME.MALE .. "~" .. CHAR_TO_ID.WORGEN.MALE] = {
 		["me"] = {
 			["scale"] = 2.5,
-			["offset"] = 0.205,
-			["feet"] = 0.42,
 		},
 		["you"] = {
 			["scale"] = 1.3,
 		},
 	},
-	["900914~1022598"] = {
-		["me"] = {
-			["scale"] = 2.779,
-			["offset"] = 0.195,
-			["feet"] = 0.42,
-		},
-		["you"] = {
-			["scale"] = 1.38,
-			["offset"] = 0.245,
-		},
-	},
-	["900914~921844"] = {
+	[CHAR_TO_ID.GNOME.MALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.FEMALE] = {
 		["me"] = {
 			["scale"] = 2.5199,
-			["offset"] = 0.205,
 		},
 		["you"] = {
 			["scale"] = 1.35,
 		},
 	},
-	["900914~589715"] = {
+	[CHAR_TO_ID.GNOME.MALE .. "~" .. CHAR_TO_ID.PANDAREN.FEMALE] = {
 		["you"] = {
-			["offset"] = 0.235,
 			["scale"] = 1.37,
 		},
 		["me"] = {
-			["offset"] = 0.175,
 			["scale"] = 2.24,
 		},
 	},
-	["900914~535052"] = {
+	[CHAR_TO_ID.GNOME.MALE .. "~" .. CHAR_TO_ID.PANDAREN.MALE] = {
 		["me"] = {
 			["scale"] = 2.599,
-			["offset"] = 0.195,
 		},
 		["you"] = {
 			["scale"] = 1.12,
 		},
 	},
-	["900914~974343"] = {
+	[CHAR_TO_ID.GNOME.MALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.MALE] = {
 		["me"] = {
 			["scale"] = 2.389,
-			["offset"] = 0.185,
-			["feet"] = 0.42,
 		},
 		["you"] = {
 			["scale"] = 1.26,
 		},
 	},
-	["900914~119376"] = {
+	[CHAR_TO_ID.GNOME.MALE .. "~" .. CHAR_TO_ID.GOBLIN.MALE] = {
 		["you"] = {
-			["offset"] = 0.195,
 			["scale"] = 1.34,
 		},
-		["me"] = {
-			["offset"] = 0.165,
-		},
 	},
-	["900914~950080"] = {
+	[CHAR_TO_ID.GNOME.MALE .. "~" .. CHAR_TO_ID.DWARF.FEMALE] = {
 		["you"] = {
-			["offset"] = 0.265,
 			["scale"] = 1.21,
 		},
 		["me"] = {
-			["offset"] = 0.175,
 			["scale"] = 1.6,
 		},
 	},
-	["900914~119369"] = {
+	[CHAR_TO_ID.GNOME.MALE .. "~" .. CHAR_TO_ID.GOBLIN.FEMALE] = {
 		["you"] = {
-			["offset"] = 0.185,
 			["scale"] = 1.41,
-		},
-		["me"] = {
-			["offset"] = 0.175,
-		},
-	},
-
-	-- VS NPC
-	["900914~creature\\draenorancient\\draenorancientgorgrond.m2"] = {
-		["me"] = {
-			["scale"] = 7.5499,
-			["feet"] = 0.42,
-		},
-		["you"] = {
-			["scale"] = 0.75,
-		},
-	},
-	["900914~creature\\kingvarianwrynn\\kingvarianwrynn.m2"] = {
-		["me"] = {
-			["scale"] = 2.6999,
-			["offset"] = 0.215,
-		},
-		["you"] = {
-			["scale"] = 1.37,
-			["offset"] = 0.235,
-		},
-	},
-	["900914~character\\broken\\male\\brokenmale.m2"] = {
-		["you"] = {
-			["scale"] = 1.37,
-			["feet"] = 0.38,
-			["facing"] = 0.79,
-		},
-		["me"] = {
-			["offset"] = 0.175,
-			["scale"] = 2.1,
-		},
-	},
-	["900914~creature\\humanfemalekid\\humanfemalekid.m2"] = {
-		["me"] = {
-			["scale"] = 1.31,
-			["offset"] = 0.175,
-		},
-		["you"] = {
-			["scale"] = 1.59,
 		},
 	},
 
@@ -764,110 +668,53 @@ local SCALE_MAPPING = {
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
 	-- VS player models
-	["950080~878772"] = {
+	[CHAR_TO_ID.DWARF.FEMALE .. "~" .. CHAR_TO_ID.DWARF.MALE] = {
 		["me"] = {
-			["height"] = 1.299,
+			["scale"] = 1.299,
 		},
 		["you"] = {
-			["height"] = 1.179,
+			["scale"] = 1.179,
 		},
 	},
-	["950080~968705"] = {
+	[CHAR_TO_ID.DWARF.FEMALE .. "~" .. CHAR_TO_ID.TAUREN.MALE] = {
 		["you"] = {
-			["height"] = 1.029,
+			["scale"] = 1.029,
 		},
 		["me"] = {
-			["height"] = 2,
+			["scale"] = 2,
 
 		},
 	},
-	["950080~974343"] = {
+	[CHAR_TO_ID.DWARF.FEMALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.MALE] = {
 		["you"] = {
-			["height"] = 1.23,
+			["scale"] = 1.23,
 		},
 		["me"] = {
-			["height"] = 1.709,
+			["scale"] = 1.709,
 		},
 	},
-	["950080~307454"] = {
+	[CHAR_TO_ID.DWARF.FEMALE .. "~" .. CHAR_TO_ID.WORGEN.MALE] = {
 		["me"] = {
-			["height"] = 1.639,
+			["scale"] = 1.639,
 		},
 		["you"] = {
-			["height"] = 1.299,
+			["scale"] = 1.299,
 		},
 	},
-	["950080~1011653"] = {
+	[CHAR_TO_ID.DWARF.FEMALE .. "~" .. CHAR_TO_ID.GNOME.FEMALE] = {
 		["me"] = {
-			["height"] = 1.599,
+			["scale"] = 1.299,
 		},
 		["you"] = {
-			["height"] = 1.279,
+			["scale"] = 1.799,
 		},
 	},
-	["950080~940356"] = {
-		["me"] = {
-			["height"] = 1.299,
-		},
+	[CHAR_TO_ID.DWARF.FEMALE .. "~" .. CHAR_TO_ID.PANDAREN.MALE] = {
 		["you"] = {
-			["height"] = 1.799,
-		},
-	},
-	["950080~535052"] = {
-		["you"] = {
-			["height"] = 1.299,
+			["scale"] = 1.299,
 		},
 		["me"] = {
-			["height"] = 1.769,
-		},
-	},
-
-	-- VS NPC
-	["950080~creature\\blingtron\\blingtron.m2"] = {
-		["me"] = {
-			["height"] = 1.269,
-		},
-		["you"] = {
-			["height"] = 1.579,
-		},
-	},
-	["950080~creature\\humanmalekid\\humanmalekid.m2"] = {
-		["you"] = {
-			["height"] = 0.799,
-		},
-		["me"] = {
-			["height"] = 1.299,
-
-		},
-	},
-
-	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-	-- Loup loup !
-	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-
-	-- VS player models
-	["creature\\wolfdraenor\\wolfdraenor.m2~1000764"] = {
-		["me"] = {
-			["height"] = 1.74,
-		},
-		["you"] = {
-			["height"] = 1.299,
-		},
-	},
-	["creature\\wolfdraenor\\wolfdraenor.m2~307453"] = {
-		["you"] = {
-			["height"] = 1.24,
-		},
-		["me"] = {
-			["height"] = 2,
-		},
-	},
-	["creature\\wolfdraenor\\wolfdraenor.m2~1011653"] = {
-		["me"] = {
-			["height"] = 1.799,
-		},
-		["you"] = {
-			["height"] = 1.299,
+			["scale"] = 1.769,
 		},
 	},
 
@@ -876,7 +723,7 @@ local SCALE_MAPPING = {
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
 	-- VS player models
-	["921844~974343"] = {
+	[CHAR_TO_ID.NIGHT_ELF.FEMALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.MALE] = {
 		["you"] = {
 			["scale"] = 1.41,
 		},
@@ -890,7 +737,7 @@ local SCALE_MAPPING = {
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
 	-- VS player models
-	["110258~1018060"] = {
+	[CHAR_TO_ID.BLOOD_ELF.FEMALE .. "~" .. CHAR_TO_ID.TROLL.FEMALE] = {
 		["you"] = {
 			["scale"] = 1.25,
 		},
@@ -898,7 +745,7 @@ local SCALE_MAPPING = {
 			["scale"] = 1.55,
 		},
 	},
-	["110258~968705"] = {
+	[CHAR_TO_ID.BLOOD_ELF.FEMALE .. "~" .. CHAR_TO_ID.TAUREN.MALE] = {
 		["me"] = {
 			["scale"] = 1.79,
 		},
@@ -907,62 +754,34 @@ local SCALE_MAPPING = {
 		},
 	},
 
-	-- VS NPC
-	["110258~creature\\thralldoomplate\\thralldoomplate.m2"] = {
-		["you"] = {
-			["scale"] = 1.15,
-		},
+	[CHAR_TO_ID.BLOOD_ELF.FEMALE .. "~" .. CHAR_TO_ID.BLOOD_ELF.MALE] = {
 		["me"] = {
-			["scale"] = 1.55,
+			["scale"] = 1.5,
 		},
+		["you"] = {
+			["scale"] = 1.33,
+		}
 	},
-	["110258~creature\\miev\\miev.m2"] = {
-		["you"] = {
-			["scale"] = 1.25,
-		},
+
+	[CHAR_TO_ID.BLOOD_ELF.FEMALE .. "~" .. CHAR_TO_ID.PANDAREN.FEMALE] = {
 		["me"] = {
-			["scale"] = 1.75,
+			["scale"] = 1.53,
 		},
+		["you"] = {
+			["scale"] = 1.39,
+		}
 	},
 
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 	-- Troll male
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
-	-- VS player models
-
-	-- VS NPC
-	["1022938~creature\\khadgar2\\khadgar2.m2"] = {
-		["me"] = {
-			["offset"] = 0.125,
-			["scale"] = 1.46,
-		},
-	},
-	["1022938~creature\\velen2\\velen2.m2"] = {
-		["you"] = {
-			["scale"] = 1.03,
-		},
-		["me"] = {
-			["scale"] = 1.79,
-			["offset"] = 0.165,
-		},
-	},
-	["1022938~creature\\naaru\\naaru.m2"] = {
-		["me"] = {
-			["scale"] = 2.65,
-			["offset"] = 0.175,
-		},
-		["you"] = {
-			["scale"] = 1.51,
-			["offset"] = 0.215,
-		},
-	},
 
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 	-- Orc female
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
-	["949470~535052"] = { -- Orc female vs Panda Male
+	[CHAR_TO_ID.ORC.FEMALE .. "~" .. CHAR_TO_ID.PANDAREN.MALE] = {
 		["me"] = {
 			["scale"] = 1.52,
 		},
@@ -971,7 +790,7 @@ local SCALE_MAPPING = {
 		}
 	},
 
-	["949470~917116"] = { -- Orc female vs Orc Male
+	[CHAR_TO_ID.ORC.FEMALE .. "~" .. CHAR_TO_ID.ORC.MALE] = {
 		["me"] = {
 			["scale"] = 1.54,
 		},
@@ -980,7 +799,7 @@ local SCALE_MAPPING = {
 		}
 	},
 
-	["949470~1022938"] = { -- Orc female vs Troll Male
+	[CHAR_TO_ID.ORC.FEMALE .. "~" .. CHAR_TO_ID.TROLL.MALE] = {
 		["me"] = {
 			["scale"] = 1.63,
 		},
@@ -989,7 +808,7 @@ local SCALE_MAPPING = {
 		}
 	},
 
-	["949470~1018060"] = { -- Orc female vs Troll Female
+	[CHAR_TO_ID.ORC.FEMALE .. "~" .. CHAR_TO_ID.TROLL.FEMALE] = {
 		["me"] = {
 			["scale"] = 1.56,
 		},
@@ -1007,6 +826,11 @@ function Lib:GetModelKeys(model1, model2)
 	local key = (model1 or "") .. "~" .. (model2 or "");
 	local inverted = (model2 or "") .. "~" .. (model1 or "");
 	return key, inverted;
+end
+
+function Lib:IsRecorded(model1, model2)
+	local key, inverted = self:GetModelKeys(model1, model2);
+	return SCALE_MAPPING[key] ~= nil or SCALE_MAPPING[inverted] ~= nil;
 end
 
 function Lib:GetModelScaling(model1, model2)
