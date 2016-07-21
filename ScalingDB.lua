@@ -167,7 +167,7 @@ local SCALE_MAPPING = {
 		}
 	},
 
-	[CHAR_TO_ID.WORGEN.MALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.FALE] = {
+	[CHAR_TO_ID.WORGEN.MALE .. "~" .. CHAR_TO_ID.NIGHT_ELF.MALE] = {
 		["me"] = {
 			["scale"] = 1.45,
 		},

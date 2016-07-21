@@ -123,9 +123,9 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[ACLAIM_ID] = 2.4,
 	},
 	[CHAR_TO_ID.NIGHT_ELF.MALE] = {
-		[TALK_ID] = 1.900,
-		[EXCLAME_ID] = 1.9,
-		[QUESTION_ID] = 1.900,
+		[TALK_ID] = 2.00,
+		[EXCLAME_ID] = 2.0,
+		[QUESTION_ID] = 2.00,
 		[YES_ID] = 1.1,
 		[NOPE_ID] = 1.3,
 		[ACLAIM_ID] = 2,
