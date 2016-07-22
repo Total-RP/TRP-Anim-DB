@@ -100,6 +100,13 @@ local SCALE_MAPPING = {
 		1.41, -- [2]
 	},
 
+	-- NIGHT ELF FEMALE
+
+	[CHAR_TO_ID.NIGHT_ELF.MALE .. "~" .. CHAR_TO_ID.DWARF.MALE] = {
+		1.38, -- [1]
+		2.03, -- [2]
+	},
+
 	-- ORC FEMALE
 
 	[CHAR_TO_ID.ORC.FEMALE .. "~" .. CHAR_TO_ID.TROLL.FEMALE] = {
@@ -402,6 +409,10 @@ local SCALE_MAPPING = {
 	[CHAR_TO_ID.HUMAN.FEMALE .. "~" .. CHAR_TO_ID.PANDAREN.MALE] = {
 		1.58, -- [1]
 		1.13, -- [2]
+	},
+	[CHAR_TO_ID.HUMAN.FEMALE .. "~" .. CHAR_TO_ID.DWARF.MALE] = {
+		1.45, -- [1]
+		1.63, -- [2]
 	},
 }
 
