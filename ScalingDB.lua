@@ -454,6 +454,10 @@ local PLACEMENT_PROPERTIES = {
 	["124456"] = { -- Human child female
 		["scale"] = 2.89,
 	},
+	["126286"] = { -- Tuskarr
+		["scale"] = 1.92,
+		["offset"] = 0.105,
+	},
 }
 
 --*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
