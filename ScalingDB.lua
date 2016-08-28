@@ -273,6 +273,14 @@ local SCALE_MAPPING = {
 		1.44, -- [1]
 		2.7599, -- [2]
 	},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.GNOME.MALE] = {
+		1.45,
+		2.43,
+	},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.DWARF.MALE] = {
+		1.45,
+		2.04,
+	},
 
 	-- DRAENEI FEMALE
 	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.DWARF.FEMALE] = {
