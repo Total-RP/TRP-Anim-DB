@@ -281,6 +281,22 @@ local SCALE_MAPPING = {
 		1.45,
 		2.04,
 	},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.DWARF.FEMALE] = {
+		1.45,
+		2.02,
+	},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~" .. CHAR_TO_ID.PANDAREN.FEMALE] = {
+		1.45,
+		1.7,
+	},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~1284603"] = { -- Odyn
+		4,
+		1.31,
+	},
+	[CHAR_TO_ID.DRAENEI.MALE .. "~1286521"] = {
+		1.9,
+		1.31,
+	},
 
 	-- DRAENEI FEMALE
 	[CHAR_TO_ID.DRAENEI.FEMALE .. "~" .. CHAR_TO_ID.DWARF.FEMALE] = {
@@ -436,9 +452,11 @@ local PLACEMENT_PROPERTIES = {
 	},
 	[CHAR_TO_ID.GNOME.MALE] = {
 		["offset"] = 0.185,
+		["scale"] = 2.66,
 	},
 	[CHAR_TO_ID.GNOME.FEMALE] = {
 		["offset"] = 0.215,
+		["scale"] = 2.66,
 	},
 	[CHAR_TO_ID.HUMAN.FEMALE] = {
 		["offset"] = 0.235,
@@ -465,6 +483,40 @@ local PLACEMENT_PROPERTIES = {
 	["126286"] = { -- Tuskarr
 		["scale"] = 1.92,
 		["offset"] = 0.105,
+	},
+	["971357"] = { -- Velen
+		["scale"] = 0.87,
+		["offset"] = 0.255,
+	},
+	["536149"] = { -- Tyrande
+		["scale"] = 1.37,
+	},
+	["1249799"] = { -- Malfurion
+		["scale"] = 0.94,
+	},
+	["646095"] = { -- Jaina
+		["scale"] = 1.43,
+		["offset"] = 0.285,
+	},
+	["977063"] = { -- Elementaire de truc
+		["scale"] = 0.83,
+	},
+	["1281267"] = { -- Valkyr
+		["scale"] = 1.01,
+	},
+	["1286521"] = { -- Valajar
+		["scale"] = 1.31,
+		["offset"] = 0.265,
+	},
+	["122815"] = { -- Vrykul
+		["scale"] = 1.28,
+		["offset"] = 0.295,
+	},
+	["1324256"] = { -- Druid panel
+		["scale"] = 2.82,
+		["feet"] = 0.4,
+		["offset"] = 0.095,
+		["facing"] = -3.99,
 	},
 }
 
