@@ -185,9 +185,9 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 	[CHAR_TO_ID.DRAENEI.FEMALE] = {
 		[TALK_ID] = 2.850,
 		[QUESTION_ID] = 1.850,
-		[EXCLAME_ID] = 2.000,
+		[EXCLAME_ID] = 2.100,
 		[YES_ID] = 1.9,
-		[NOPE_ID] = 2,
+		[NOPE_ID] = 2.200,
 		[ACLAIM_ID] = 2,
 	},
 	[CHAR_TO_ID.DRAENEI.MALE] = {
@@ -283,6 +283,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 	},
 	-- Taurene
 	[CHAR_TO_ID.TAUREN.FEMALE] = {
+		[TALK_ID] = 3.0,
 		[YES_ID] = 1.5,
 		[NOPE_ID] = 1.8,
 		[QUESTION_ID] = 1.7,
@@ -368,7 +369,7 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[TALK_ID] = 3.2,
 	},
 	["124118"] = {
-		[TALK_ID] = 1.9,
+		[TALK_ID] = 2.65,
 	},
 	-- Greymane
 	["1246857"] = {
