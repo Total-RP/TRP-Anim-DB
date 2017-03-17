@@ -440,21 +440,21 @@ ANIM_MAPPING["124565"] = ALL_TO_NONE;
 local after, tostring = C_Timer.After, tostring;
 local type = type;
 
-function Lib:PlayAnim(model, sequence)
-	model:SetAnimation(sequence);
+function Lib:PlayAnim(model, sequence, animationVariation)
+	model:SetAnimation(sequence, animationVariation or 0);
 	if model.debug then
 		model.debug:SetText(sequence);
 	end
 end
 
-function Lib:PlayAnimationDelay(model, sequence, duration, delay, token)
+function Lib:PlayAnimationDelay(model, sequence, duration, delay, token, animationVariation)
 	if delay == 0 then
-		self:PlayAnim(model, sequence)
+		self:PlayAnim(model, sequence, animationVariation)
 	else
 		model.token = token;
 		after(delay, function()
 			if model.token == token then
-				self:PlayAnim(model, sequence);
+				self:PlayAnim(model, sequence, animationVariation);
 			end
 		end)
 	end
@@ -462,9 +462,9 @@ function Lib:PlayAnimationDelay(model, sequence, duration, delay, token)
 	return delay + duration;
 end
 
-function Lib:PlayAnimationAndStand(model, sequence, duration, token)
+function Lib:PlayAnimationAndStand(model, sequence, duration, token, animationVariation)
 	model.token = token;
-	self:PlayAnim(model, sequence);
+	self:PlayAnim(model, sequence, animationVariation);
 	after(duration, function()
 		if model.token == token then
 			self:PlayAnim(model, 0);
