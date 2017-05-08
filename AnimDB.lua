@@ -18,6 +18,7 @@
 
 local MAJOR, MINOR = "TRP-Dialog-Animation-DB", 2
 
+---@class TRPDialogAnimationDB
 local Lib = LibStub:NewLibrary(MAJOR, MINOR)
 
 if not Lib then return end
@@ -399,51 +400,34 @@ local DEFAULT_ANIM_MAPPING = {
 	["?"] = 65,
 	["."] = 60,
 }
-local ALL_TO_EXCLAME = {
-	["!"] = 64,
-	["?"] = 65,
-	["."] = 64,
-}
-local ALL_TO_TALK = {
-	["!"] = 60,
-	["?"] = 60,
-}
-local ALL_TO_NONE = {
-	["!"] = 0,
-	["?"] = 0,
-	["."] = 0,
-}
-local ANIM_MAPPING = {};
-ANIM_MAPPING["124456"] = ALL_TO_TALK;
-ANIM_MAPPING["930099"] = ALL_TO_TALK;
-ANIM_MAPPING["124495"] = ALL_TO_TALK;
-ANIM_MAPPING["123455"] = ALL_TO_TALK;
-ANIM_MAPPING["376247"] = ALL_TO_TALK;
-ANIM_MAPPING["125603"] = ALL_TO_NONE;
-ANIM_MAPPING["125512"] = ALL_TO_NONE;
-ANIM_MAPPING["125059"] = ALL_TO_NONE;
-ANIM_MAPPING["125576"] = ALL_TO_NONE;
-ANIM_MAPPING["123071"] = ALL_TO_NONE;
-ANIM_MAPPING["970457"] = ALL_TO_NONE;
-ANIM_MAPPING["986699"] = ALL_TO_TALK;
-ANIM_MAPPING["1033563"] = ALL_TO_TALK;
-ANIM_MAPPING["1033002"] = ALL_TO_NONE;
-ANIM_MAPPING["125796"] = ALL_TO_NONE;
-ANIM_MAPPING["124118"] = ALL_TO_TALK;
-ANIM_MAPPING["120263"] = ALL_TO_TALK; -- Some naga female
-ANIM_MAPPING["124565"] = ALL_TO_NONE;
 
 --*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 -- Animations API
 --*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
 local after, tostring = C_Timer.After, tostring;
-local type = type;
+local assert = assert;
 
-function Lib:PlayAnim(model, sequence, animationVariation)
-	model:SetAnimation(sequence, animationVariation or 0);
+function Lib:PlayAnim(model, animationID, animationVariation)
+
+	-- For question and exclamation animations, check if they are available for this model
+	-- and default to one that is available instead.
+	if not Lib:ModelHasAnimation(model, animationID) and animationID == DEFAULT_ANIM_MAPPING["?"] then
+		animationID = DEFAULT_ANIM_MAPPING["!"];
+	end
+	if not Lib:ModelHasAnimation(model, animationID) and animationID == DEFAULT_ANIM_MAPPING["!"] then
+		animationID = DEFAULT_ANIM_MAPPING["."];
+	end
+
+	-- If the model doesn't implement an animation for the given animation ID, default to 0 (standing)
+	if not Lib:ModelHasAnimation(model, animationID) then
+		animationID = 0;
+	end
+
+	model:SetAnimation(animationID, animationVariation or 0);
+
 	if model.debug then
-		model.debug:SetText(sequence);
+		model.debug:SetText(animationID);
 	end
 end
 
@@ -480,11 +464,21 @@ function Lib:GetAnimationDuration(model, sequence)
 	return ANIMATION_SEQUENCE_DURATION[sequence] or DEFAULT_SEQUENCE_TIME;
 end
 
+--- Return the animation ID corresponding to the given punctuation mark (for example: 60 for .)
+--- @param model string
+--- The model ID was previously given to this function as we used a table to keep track of models that do not
+--- implement some animations and return a fallback animation that was implemented.
+--- @param animationType string
 function Lib:GetDialogAnimation(model, animationType)
-	if type(model) == "string" then
-		if ANIM_MAPPING[model] and ANIM_MAPPING[model][animationType] then
-			return ANIM_MAPPING[model][animationType];
-		end
-	end
-	return DEFAULT_ANIM_MAPPING[animationType];
+	return DEFAULT_ANIM_MAPPING[animationType] or DEFAULT_ANIM_MAPPING["."];
+end
+
+--- Check if the given Model implements an animation for the given animation ID
+--- @param model Model
+--- Model widget (or another widget inheriting the Model widget methods) to test.
+--- @param animationID number
+--- ID of the animation to check
+function Lib:ModelHasAnimation(model, animationID)
+	assert(model and model.HasAnimation, "model is not a Model widget and doesn't implement Model:HasAnimation(animationID)!");
+	return model:HasAnimation(animationID);
 end
