@@ -408,6 +408,18 @@ local DEFAULT_ANIM_MAPPING = {
 local after, tostring = C_Timer.After, tostring;
 local assert = assert;
 
+function Lib:GetCorrectAnim(model, animationID)
+	-- For question and exclamation animations, check if they are available for this model
+	-- and default to one that is available instead.
+	if not Lib:ModelHasAnimation(model, animationID) and animationID == DEFAULT_ANIM_MAPPING["?"] then
+		animationID = DEFAULT_ANIM_MAPPING["!"];
+	end
+	if not Lib:ModelHasAnimation(model, animationID) and animationID == DEFAULT_ANIM_MAPPING["!"] then
+		animationID = DEFAULT_ANIM_MAPPING["."];
+	end
+	return animationID
+end
+
 function Lib:PlayAnim(model, animationID, animationVariation)
 
 	-- For question and exclamation animations, check if they are available for this model
