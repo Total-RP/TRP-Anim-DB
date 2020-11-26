@@ -518,6 +518,55 @@ local PLACEMENT_PROPERTIES = {
 		["offset"] = 0.095,
 		["facing"] = -3.99,
 	},
+
+	--region Shadowlands
+	["3307974"] = { -- Shadowlands Maw escape stone
+		["scale"] = 10.15,
+		["offset"] = 0.105,
+	},
+	["3527746"] = { -- Oribos floating people
+		["scale"] = 1.56,
+		["offset"] = 0.215,
+	},
+	["3058051"] = { -- Oribos flaming head people
+		["scale"] = 1.78,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["3023013"] = { -- Swolekin
+		["scale"] = 1.66,
+		["feet"] = 0.4,
+		["offset"] = 0.185,
+		["facing"] = 0.75,
+	},
+	["2974101"] = { -- Bastion memory bot ladies
+		["scale"] = 0.98,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["3062169"] = { -- Kyrian dude
+		["scale"] = 1.32,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["3065141"] = { -- Kyrian lady
+		["scale"] = 1.3,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["2966413"] = { -- Armored winged kyrian
+		["scale"] = 1.29,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+
+
+	--endregion
 }
 
 --*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
@@ -590,109 +639,3 @@ function Lib:SetModelOffset(offset, frame, isMe)
 	frame.offset = offset;
 	frame:SetTargetDistance(offset * (isMe and 1 or -1));
 end
-
---*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
--- DEBUG AND MAINTENANCE
--- Don't use it on your code. :)
---*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-
--- /run StorylineGenerate();
-function StorylineGenerate()
-	Storyline_Data.SCALE_MAPPING = {};
-
-	local keys = {};
-	-- Get the keys
-	for key, _ in pairs(SCALE_MAPPING) do
-		tinsert(keys, key);
-	end
-
-	table.sort(keys);
-
-	local nameFinder = function(key)
-		for race, _ in pairs(CHAR_TO_ID) do
-			if CHAR_TO_ID[race].FEMALE == key then
-				return race .. ".FEMALE";
-			elseif CHAR_TO_ID[race].MALE == key then
-				return race .. ".MALE";
-			end
-		end
-	end
-
-	for _, key in pairs(keys) do
-		local structure = SCALE_MAPPING[key];
-		if structure.me and structure.you then
-			Storyline_Data.SCALE_MAPPING[key] = {
-				structure.me.scale, structure.you.scale
-			}
-		elseif structure.me then
-			Storyline_Data.SCALE_MAPPING[key] = {
-				structure.me.scale
-			}
-		end
-	end
-
-	ReloadUI();
-end
-
-local debugPlayerModelList = {
-	-- Alliance
-	"1000764",
-	"1011653",
-	"940356",
-	"900914",
-	"950080",
-	"878772",
-	"1022598",
-	"1005887",
-	"535052",
-	"589715",
-	"921844",
-	"974343",
-	"307453",
-	"307454",
-
-	-- Horde
-	--	"119376",
-	--	"119369",
-}
-
---function TRP3_API.extended.animations.debugMissingScaling()
---	local alreadyTreated = {};
---	local count = 0;
---	for _, firstModel in pairs(debugPlayerModelList) do
---		for _, secondModel in pairs(debugPlayerModelList) do
---			if firstModel ~= secondModel then
---				local key, invertedKey = firstModel .. "~" .. secondModel, secondModel .. "~" .. firstModel;
---				if not TRP3_API.extended.animations.SCALE_MAPPING[key] and not TRP3_API.extended.animations.SCALE_MAPPING[invertedKey] and not alreadyTreated[key] and not alreadyTreated[invertedKey] then
---					alreadyTreated[key] = true;
---					alreadyTreated[invertedKey] = true;
---					count = count + 1;
---					print(("Missing scaling for %s + %s"):format(firstModel, secondModel));
---				end
---			end
---		end
---	end
---	print(("Total %s"):format(count));
---end
---
---local IMPORT = {
---
---}
---
---function TRP3_API.extended.animations.API.debugComplete()
---	if not TRP3_API.extended.animations.Data.debug.finalImport then
---		TRP3_API.extended.animations.Data.debug.finalImport = {};
---	end
---	wipe(TRP3_API.extended.animations.Data.debug.finalImport);
---	-- Find which key to import
---	local toImport = {};
---	for key, info in pairs(IMPORT) do
---		local firstModel = key:sub(1, key:find("~") - 1);
---		local secondModel = key:sub(key:find("~") + 1);
---		local invertedKey = secondModel .. "~" .. firstModel;
---		if not TRP3_API.extended.animations.SCALE_MAPPING[key] and not TRP3_API.extended.animations.SCALE_MAPPING[invertedKey] then
---			print("new to import: " .. key);
---			TRP3_API.extended.animations.Data.debug.finalImport[key] = info;
---		end
---	end
---end
