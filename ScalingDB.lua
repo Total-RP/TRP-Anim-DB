@@ -558,14 +558,120 @@ local PLACEMENT_PROPERTIES = {
 		["offset"] = 0.215,
 		["facing"] = 0.75,
 	},
-	["2966413"] = { -- Armored winged kyrian
+	["2966413"] = { -- Winged Kyrian lady
 		["scale"] = 1.29,
 		["feet"] = 0.4,
 		["offset"] = 0.215,
 		["facing"] = 0.75,
 	},
-
-
+	["3028313"] = { -- Winged Kyrian dude
+		["scale"] = 1.23,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["3028315"] = { -- Shadow winged kyrian dude
+		["scale"] = 1.25,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["3257514"] = { -- Night fae lady
+		["scale"] = 1.31,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["3208389"] = { -- Night Fae centaur soldier
+		["scale"] = 1.78,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["3208391"] = { -- Night Fae centaur soldier lady
+		["scale"] = 1.81,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["3024835"] = { -- Night Fae small fae
+		["scale"] = 2.75,
+		["feet"] = 0.17,
+		["offset"] = 0.205,
+		["facing"] = 0.75,
+	},
+	["3052707"] = { -- Night Fae creepy slender tree people
+		["scale"] = 0.9,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["3071370"] = { -- Night Fae fox spirit (player)
+		["scale"] = 6.45,
+		["feet"] = 0.3,
+		["offset"] = 0.285,
+		["facing"] = -2.45,
+	},
+	["3670316"] = { -- Night Fae mushroom transporter
+		["scale"] = 8.65,
+		["feet"] = 0.35,
+		["offset"] = 0.115,
+		["facing"] = 0.75,
+	},
+	["3196372"] = { -- Maldraxxus multi headed flying beast
+		["scale"] = 0.65,
+		["feet"] = 0.4,
+		["offset"] = 0.195,
+		["facing"] = 0.75,
+	},
+	["3197237"] = { -- Maldraxxus big fleshy dude
+		["scale"] = 1.15,
+		["feet"] = 0.4,
+		["offset"] = 0.205,
+		["facing"] = 0.75,
+	},
+	["3284341"] = { -- Maldraxxus big beafy dude
+		["scale"] = 0.85,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["2834279"] = { -- Venthyr dude
+		["scale"] = 1.79,
+		["feet"] = 0.4,
+		["offset"] = 0.195,
+		["facing"] = 0.75,
+	},
+	["3049899"] = { -- Venthyr lady
+		["scale"] = 2.05,
+		["feet"] = 0.4,
+		["offset"] = 0.145,
+		["facing"] = 0.75,
+	},
+	["2921972"] = { -- Venthyr small helpers
+		["scale"] = 1.91,
+		["feet"] = 0.4,
+		["offset"] = 0.205,
+		["facing"] = 0.75,
+	},
+	["3054707"] = { -- Venthyr imp
+		["scale"] = 3.12,
+		["feet"] = 0.38,
+		["offset"] = 0.235,
+		["facing"] = 0.75,
+	},
+	["3492867"] = { -- Torghast legendary forging dude
+		["scale"] = 0.42,
+		["feet"] = 0.4,
+		["offset"] = 1.235,
+		["facing"] = 0.75,
+	},
+	["3677217"] = { -- Torghast tracking pilar
+		["scale"] = 3.95,
+		["feet"] = 0.4,
+		["offset"] = 0.125,
+		["facing"] = 0.75,
+	},
 	--endregion
 }
 
@@ -593,10 +699,10 @@ function Lib:GetModelCoupleProperties(model1, model2)
 
 	local scalingMe, scalingYou;
 	if SCALE_MAPPING[key] then
-		scalingMe, scalingYou = SCALE_MAPPING[key][1] or DEFAULT_PROPERTIES.scale, SCALE_MAPPING[key][2] or DEFAULT_PROPERTIES.scale;
+		scalingMe, scalingYou = SCALE_MAPPING[key][1], SCALE_MAPPING[key][2];
 	end
 	if SCALE_MAPPING[inverted] then
-		scalingMe, scalingYou = SCALE_MAPPING[inverted][2] or DEFAULT_PROPERTIES.scale, SCALE_MAPPING[inverted][1] or DEFAULT_PROPERTIES.scale;
+		scalingMe, scalingYou = SCALE_MAPPING[inverted][2], SCALE_MAPPING[inverted][1];
 	end
 
 	local propsMe, propsYou = self:GetModelPlacementProperties(model1), self:GetModelPlacementProperties(model2);
