@@ -570,6 +570,12 @@ local PLACEMENT_PROPERTIES = {
 		["offset"] = 0.215,
 		["facing"] = 0.75,
 	},
+	["3431647"] = { -- Kyrian leader
+		["scale"] = 0.85,
+		["feet"] = 2.7755575615629e-17,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
 	["3028315"] = { -- Shadow winged kyrian dude
 		["scale"] = 1.25,
 		["feet"] = 0.4,
@@ -618,6 +624,12 @@ local PLACEMENT_PROPERTIES = {
 		["offset"] = 0.115,
 		["facing"] = 0.75,
 	},
+	["3522546"] = { -- Ardenweald pile of dirt
+		["scale"] = 5.85,
+		["feet"] = 0.4,
+		["offset"] = 0.105,
+		["facing"] = 0.75,
+	},
 	["3196372"] = { -- Maldraxxus multi headed flying beast
 		["scale"] = 0.65,
 		["feet"] = 0.4,
@@ -634,6 +646,36 @@ local PLACEMENT_PROPERTIES = {
 		["scale"] = 0.85,
 		["feet"] = 0.4,
 		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["3200265"] = { -- Maldraxxus big daddy
+		["scale"] = 1.15,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["3396107"] = { -- Maldraxxus spider dudes
+		["scale"] = 1,
+		["feet"] = 0.4,
+		["offset"] = 0.255,
+		["facing"] = 0.75,
+	},
+	["3087468"] = { -- Maldraxxus mage skeleton
+		["scale"] = 1.3,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["3482565"] = { -- Maldraxxus lich
+		["scale"] = 1.25,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["3074845"] = { -- Maldraxxus abomination
+		["scale"] = 1.08,
+		["feet"] = 0.4,
+		["offset"] = 0.175,
 		["facing"] = 0.75,
 	},
 	["2834279"] = { -- Venthyr dude
@@ -658,6 +700,30 @@ local PLACEMENT_PROPERTIES = {
 		["scale"] = 3.12,
 		["feet"] = 0.38,
 		["offset"] = 0.235,
+		["facing"] = 0.75,
+	},
+	["3449671"] = { -- Winged Venthyr lady
+		["scale"] = 1.05,
+		["feet"] = 0.4,
+		["offset"] = 0.265,
+		["facing"] = 0.75,
+	},
+	["3492361"] = { -- Winged Venthyr dude
+		["scale"] = 0.92,
+		["feet"] = 0.4,
+		["offset"] = 0.335,
+		["facing"] = 0.75,
+	},
+	["2529386"] = { -- Venthyr winged general
+		["scale"] = 0.91,
+		["feet"] = 0.4,
+		["offset"] = 0.285,
+		["facing"] = 0.75,
+	},
+	["3387000"] = { -- Venthyr  huge door guard
+		["scale"] = 0.45,
+		["feet"] = 1.63,
+		["offset"] = 0.285,
 		["facing"] = 0.75,
 	},
 	["3492867"] = { -- Torghast legendary forging dude
