@@ -519,9 +519,11 @@ local PLACEMENT_PROPERTIES = {
 	},
 	[CHAR_TO_ID.DWARF.MALE] = {
 		["offset"] = 0.185,
+        ["scale"] = 1.62,
 	},
 	[CHAR_TO_ID.DWARF.FEMALE] = {
 		["offset"] = 0.255,
+        ["scale"] = 1.59,
 	},
 	[CHAR_TO_ID.GNOME.MALE] = {
 		["offset"] = 0.185,
