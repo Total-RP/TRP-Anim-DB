@@ -93,6 +93,11 @@ local CHAR_TO_ID = {
 		FEMALE = "997378",
 		MALE = "959310",
 	},
+	DRACTHYR = {
+		FEMALE = "4220448",
+		MALE = "4395382",
+		DRAGON = "4207724",
+	},
 }
 
 local CLASSIC_CHAR_TO_ID = {
@@ -370,6 +375,15 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[TALK_ID] = 2.5,
 	},
 
+	[CHAR_TO_ID.DRACTHYR.DRAGON] = {
+		[YES_ID] = 2.2,
+		[NOPE_ID] = 2.0,
+		[QUESTION_ID] = 4,
+		[EXCLAME_ID] = 3,
+		[ACLAIM_ID] = 2.1,
+		[TALK_ID] = 4.5,
+	},
+
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 	-- NPC
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
@@ -422,7 +436,32 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 
 	["3487358"] = { -- Maldraxxus HD skeleton
 		[TALK_ID] = 4
-	}
+	},
+
+	-- Dragonflight
+
+	["4081379"] = { -- Scout Tomul (centaur female)
+		[TALK_ID] = 5,
+		[EXCLAME_ID] = 5,
+		[QUESTION_ID] = 5,
+	},
+	["4036647"] = { -- Khansguard Jebotai (centaur male)
+		[TALK_ID] = 5,
+		[EXCLAME_ID] = 5,
+		[QUESTION_ID] = 5,
+	},
+	["4521688"] = { -- Agurahl the Butcher (centaur male)
+		[TALK_ID] = 5,
+		[EXCLAME_ID] = 5,
+		[QUESTION_ID] = 5,
+	},
+
+	["4039115"] = { -- Khuri (tuskarr)
+		[TALK_ID] = 3,
+	},
+	["4039116"] = { -- Hanu (tuskarr)
+		[TALK_ID] = 4,
+	},
 }
 
 ANIMATION_SEQUENCE_DURATION_BY_MODEL["579571"] = ANIMATION_SEQUENCE_DURATION_BY_MODEL["974343"];

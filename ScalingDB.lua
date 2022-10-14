@@ -28,6 +28,7 @@ if not Lib then return end
 --*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
 local CHAR_TO_ID = {
+    -- Alliance
 	HUMAN = {
 		FEMALE = "1000764",
 		MALE = "1011653",
@@ -52,10 +53,27 @@ local CHAR_TO_ID = {
 		FEMALE = "307453",
 		MALE = "307454",
 	},
-	PANDAREN = {
-		FEMALE = "589715",
-		MALE = "535052",
-	},
+    VOIDELF = {
+        FEMALE = "1733758",
+        MALE = "1734034",
+    },
+    LIGHTFORGED = {
+        FEMALE = "1593999",
+        MALE = "1620605",
+    },
+    KULTIRAN = {
+        FEMALE = "1886724",
+        MALE = "1721003",
+    },
+    DARKIRON = {
+        FEMALE = "1890763",
+        MALE = "1890765",
+    },
+    MECHAGNOME = {
+        FEMALE = "2564806",
+        MALE = "2622502",
+    },
+    -- Horde
 	ORC = {
 		FEMALE = "949470",
 		MALE = "917116",
@@ -80,6 +98,60 @@ local CHAR_TO_ID = {
 		FEMALE = "997378",
 		MALE = "959310",
 	},
+    HIGHMOUNTAIN = {
+        FEMALE = "1630402",
+        MALE = "1630218",
+    },
+    NIGHTBORNE = {
+        FEMALE = "1810676",
+        MALE = "1814471",
+    },
+    ZANDALARI = {
+        FEMALE = "1662187",
+        MALE = "1630447",
+    },
+    -- Maghar is just orc
+    VULPERA = {
+        FEMALE = "1890759",
+        MALE = "1890761",
+    },
+    -- Neutral
+    PANDAREN = {
+        FEMALE = "589715",
+        MALE = "535052",
+    },
+	DRACTHYR = {
+		FEMALE = "4220448",
+		MALE = "4395382",
+		DRAGON = "4207724",
+	},
+}
+
+-- Allied races scale matches
+local CHAR_TO_CHAR = {
+    [CHAR_TO_ID.VOIDELF.MALE] = CHAR_TO_ID.BLOOD_ELF.MALE,
+    [CHAR_TO_ID.VOIDELF.FEMALE] = CHAR_TO_ID.BLOOD_ELF.FEMALE,
+
+    [CHAR_TO_ID.LIGHTFORGED.MALE] = CHAR_TO_ID.DRAENEI.MALE,
+    [CHAR_TO_ID.LIGHTFORGED.FEMALE] = CHAR_TO_ID.DRAENEI.FEMALE,
+
+    [CHAR_TO_ID.DARKIRON.MALE] = CHAR_TO_ID.DWARF.MALE,
+    [CHAR_TO_ID.DARKIRON.FEMALE] = CHAR_TO_ID.DWARF.FEMALE,
+
+    [CHAR_TO_ID.MECHAGNOME.MALE] = CHAR_TO_ID.GNOME.MALE,
+    [CHAR_TO_ID.MECHAGNOME.FEMALE] = CHAR_TO_ID.GNOME.FEMALE,
+
+    [CHAR_TO_ID.HIGHMOUNTAIN.MALE] = CHAR_TO_ID.TAUREN.MALE,
+    [CHAR_TO_ID.HIGHMOUNTAIN.FEMALE] = CHAR_TO_ID.TAUREN.FEMALE,
+
+    [CHAR_TO_ID.NIGHTBORNE.MALE] = CHAR_TO_ID.NIGHT_ELF.MALE,
+    [CHAR_TO_ID.NIGHTBORNE.FEMALE] = CHAR_TO_ID.NIGHT_ELF.FEMALE,
+
+    [CHAR_TO_ID.VULPERA.MALE] = CHAR_TO_ID.GOBLIN.MALE,
+    [CHAR_TO_ID.VULPERA.FEMALE] = CHAR_TO_ID.GOBLIN.FEMALE,
+
+    [CHAR_TO_ID.DRACTHYR.MALE] = CHAR_TO_ID.BLOOD_ELF.MALE,
+    [CHAR_TO_ID.DRACTHYR.FEMALE] = CHAR_TO_ID.HUMAN.FEMALE,
 }
 
 local DEFAULT_PROPERTIES = {
@@ -467,6 +539,16 @@ local PLACEMENT_PROPERTIES = {
 	[CHAR_TO_ID.PANDAREN.FEMALE] = {
 		["offset"] = 0.265,
 	},
+	[CHAR_TO_ID.DRACTHYR.DRAGON] = {
+		["feet"] = 0.43,
+		["offset"] = 0.245,
+	},
+    [CHAR_TO_ID.GOBLIN.MALE] = {
+        ["scale"] = 2.32,
+    },
+    [CHAR_TO_ID.GOBLIN.FEMALE] = {
+        ["scale"] = 2.32,
+    },
 
 	-- NPCs
 	["123455"] = { -- Draenei child female
@@ -739,6 +821,159 @@ local PLACEMENT_PROPERTIES = {
 		["facing"] = 0.75,
 	},
 	--endregion
+
+	--region Dragonflight
+	["3084654"] = { -- Wrathion
+		["scale"] = 0.83,
+		["feet"] = 0.33,
+		["offset"] = 0.375,
+		["facing"] = 0.67,
+	},
+	["4227968"] = { -- Majordomo Selistra (red dragon)
+		["scale"] = 0.94,
+		["feet"] = 0.4,
+		["offset"] = 0.395,
+		["facing"] = 0.79,
+	},
+	["4416923"] = { -- Sabellian (black dragon)
+		["scale"] = 0.94,
+		["feet"] = 0.4,
+		["offset"] = 0.355,
+		["facing"] = 0.79,
+	},
+	["4216711"] = { -- Caretaker Azkra (dragonspawn)
+		["scale"] = 1.15,
+		["feet"] = 0.4,
+		["offset"] = 0.295,
+		["facing"] = 0.75,
+	},
+	["3947971"] = { -- Lillistrasza (dragon whelp)
+		["scale"] = 2.78,
+		["feet"] = 0.4,
+		["offset"] = 0.185,
+		["facing"] = 0.79,
+	},
+	["4498203"] = { -- Scalecommander Emberthal (Dracthyr Female NPC)
+		["scale"] = 1.78,
+		["feet"] = 0.44,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["4183015"] = { -- Krillonn (bulky dragonspawn)
+		["scale"] = 1.09,
+		["feet"] = 0.4,
+		["offset"] = 0.305,
+		["facing"] = 0.75,
+	},
+	["4081379"] = { -- Scout Tomul (centaur female)
+		["scale"] = 1.77,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["4036647"] = { -- Khansguard Jebotai (centaur male)
+		["scale"] = 1.77,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["4521688"] = { -- Agurahl the Butcher (centaur male)
+		["scale"] = 1.19,
+		["feet"] = 0.4,
+		["offset"] = 0.245,
+		["facing"] = 0.75,
+	},
+	["2404896"] = { -- Gracus (Ancient)
+		["scale"] = 0.85,
+		["feet"] = 0.4,
+		["offset"] = 0.195,
+		["facing"] = 0.75,
+	},
+	["3024833"] = { -- Dryad
+		["scale"] = 1.27,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["166523"] = { -- Supply Portal
+		["scale"] = 2.82,
+		["feet"] = 0.4,
+		["offset"] = 0.115,
+		["facing"] = 0.75,
+	},
+	["4495214"] = { -- Alexstrasza
+		["scale"] = 0.98,
+		["feet"] = 0.4,
+		["offset"] = 0.325,
+		["facing"] = 0.75,
+	},
+	["4498270"] = { -- Nozdormu
+		["scale"] = 0.98,
+		["feet"] = 0.4,
+		["offset"] = 0.325,
+		["facing"] = 0.75,
+	},
+	["523697"] = { -- Magmasworn Spear
+		["scale"] = 2.18,
+		["feet"] = 0.23,
+		["offset"] = 0.125,
+		["facing"] = 0.73,
+	},
+	["4218359"] = { -- Chromie
+		["scale"] = 2.14,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["4423740"] = { -- Herald Flaps (Protodrake Whelp)
+		["scale"] = 2.34,
+		["feet"] = 0.35,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["1355687"] = { -- Jolsai (Nightborne child)
+		["scale"] = 2.06,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["123457"] = { -- Nusall (Draenei child)
+		["scale"] = 2.06,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["652330"] = { -- Ji-eun (Pandaren child)
+		["scale"] = 2.06,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["518459"] = { -- Twinkle (Goblin child)
+		["scale"] = 2.06,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["1608483"] = { -- Ariel (Human child)
+		["scale"] = 2.06,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["1626310"] = { -- Nime (Troll child)
+		["scale"] = 2.06,
+		["feet"] = 0.4,
+		["offset"] = 0.215,
+		["facing"] = 0.75,
+	},
+	["3858816"] = { -- Tarjin the Blind (Djaradin)
+		["scale"] = 1.07,
+		["feet"] = 0.4,
+		["offset"] = 0.285,
+		["facing"] = 0.75,
+	},
+	--endregion
 }
 
 --*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
@@ -761,6 +996,10 @@ function Lib:GetModelPlacementProperties(model)
 end
 
 function Lib:GetModelCoupleProperties(model1, model2)
+    -- Grabbing equivalent scale
+    model1 = CHAR_TO_CHAR[model1] or model1;
+    model2 = CHAR_TO_CHAR[model2] or model2;
+
 	local key, inverted = self:GetModelKeys(model1, model2);
 
 	local scalingMe, scalingYou;
