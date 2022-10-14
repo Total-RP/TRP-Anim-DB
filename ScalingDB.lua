@@ -77,6 +77,7 @@ local CHAR_TO_ID = {
 	ORC = {
 		FEMALE = "949470",
 		MALE = "917116",
+        MALE_UPRIGHT = "1968587",
 	},
 	GOBLIN = {
 		FEMALE = "119369",
@@ -548,6 +549,9 @@ local PLACEMENT_PROPERTIES = {
     },
     [CHAR_TO_ID.GOBLIN.FEMALE] = {
         ["scale"] = 2.32,
+    },
+    [CHAR_TO_ID.ORC.MALE_UPRIGHT] = {
+        ["scale"] = 1.21,
     },
 
 	-- NPCs
