@@ -810,6 +810,10 @@ local PLACEMENT_PROPERTIES = {
 		["scale"] = 0.98,
 		["offset"] = 0.325,
 	},
+	["4496906"] = { -- Kalecgos
+		["scale"] = 0.98,
+		["offset"] = 0.325,
+	},
 	["523697"] = { -- Magmasworn Spear
 		["scale"] = 2.18,
 		["feet"] = 0.23,
@@ -844,6 +848,24 @@ local PLACEMENT_PROPERTIES = {
 	["3858816"] = { -- Tarjin the Blind (Djaradin)
 		["scale"] = 1.07,
 		["offset"] = 0.285,
+	},
+    ["4485594"] = { -- Runestone
+        ["scale"] = 3.21,
+        ["offset"] = 0.115,
+        ["facing"] = 0.49,
+    },
+    ["4077816"] = { -- Roki (Bird)
+        ["scale"] = 2.47,
+        ["offset"] = 0.255,
+    },
+	["4184229"] = { -- Ingot (drakonid child)
+		["scale"] = 2.03,
+	},
+	["4186587"] = { -- Neelo (tuskarr child)
+		["scale"] = 2.13,
+	},
+	["4048782"] = { -- Duckling
+		["scale"] = 5.38,
 	},
 	--endregion
 }
