@@ -867,6 +867,12 @@ local PLACEMENT_PROPERTIES = {
 	["4048782"] = { -- Duckling
 		["scale"] = 5.38,
 	},
+	["1522882"] = {
+		["scale"] = 1.23,
+	},
+	["1120702"] = { -- Harpy
+		["scale"] = 1.18,
+	},
 	--endregion
 }
 
