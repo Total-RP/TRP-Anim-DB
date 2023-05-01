@@ -873,6 +873,17 @@ local PLACEMENT_PROPERTIES = {
 	["1120702"] = { -- Harpy
 		["scale"] = 1.18,
 	},
+	["1135341"] = { -- Brogg the Beast
+		["scale"] = 1.04,
+		["offset"] = 0.255,
+	},
+	["3950118"] = { -- Niffen
+		["scale"] = 1.92,
+	},
+	["4575036"] = { -- Newsy (Snail)
+		["scale"] = 2.85,
+		["offset"] = 0.225,
+	},
 	--endregion
 }
 
