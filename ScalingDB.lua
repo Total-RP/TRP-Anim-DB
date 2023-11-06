@@ -884,6 +884,37 @@ local PLACEMENT_PROPERTIES = {
 		["scale"] = 2.85,
 		["offset"] = 0.225,
 	},
+	["2404898"] = { -- Sprucecrown (tree ancient)
+		["scale"] = 0.73,
+	},
+	["4883916"] = { -- Q'onzu
+		["scale"] = 2.95,
+		["offset"] = 0.345,
+	},
+	["1261840"] = { -- Cenarius
+		["scale"] = 1.06,
+		["offset"] = 0.265,
+	},
+	["5011146"] = { -- Keeper Amrymn (grove keeper)
+		["scale"] = 1.73,
+		["offset"] = 0.235,
+	},
+	["5151105"] = { -- Merithra
+		["scale"] = 0.98,
+		["offset"] = 0.325,
+	},
+	["4278602"] = { -- Buri (Protodrake)
+		["scale"] = 0.34,
+		["offset"] = 0.525,
+		["facing"] = 0.77,
+	},
+	["5091437"] = { -- Bodwin (Owl)
+		["scale"] = 2.39,
+		["offset"] = 0.235,
+	},
+	["1139162"] = { -- Kiya Featherpaw (Boomkin)
+		["scale"] = 1.02,
+	},
 	--endregion
 }
 
