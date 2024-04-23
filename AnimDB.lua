@@ -98,6 +98,10 @@ local CHAR_TO_ID = {
 		MALE = "4395382",
 		DRAGON = "4207724",
 	},
+	EARTHEN = {
+		FEMALE = "5548259",
+		MALE = "5548261",
+	},
 }
 
 local CLASSIC_CHAR_TO_ID = {
@@ -382,6 +386,23 @@ local ANIMATION_SEQUENCE_DURATION_BY_MODEL = {
 		[EXCLAME_ID] = 3,
 		[ACLAIM_ID] = 2.1,
 		[TALK_ID] = 4.5,
+	},
+
+	[CHAR_TO_ID.EARTHEN.MALE] = {
+		[EXCLAME_ID] = 2.00,
+		[QUESTION_ID] = 1.800,
+		[TALK_ID] = 2.000,
+		[YES_ID] = 1.9,
+		[NOPE_ID] = 1.9,
+		[ACLAIM_ID] = 3,
+	},
+	[CHAR_TO_ID.EARTHEN.FEMALE] = {
+		[TALK_ID] = 1.900,
+		[EXCLAME_ID] = 2.00,
+		[QUESTION_ID] = 1.800,
+		[YES_ID] = 2.0,
+		[NOPE_ID] = 1.9,
+		[ACLAIM_ID] = 2,
 	},
 
 	--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*

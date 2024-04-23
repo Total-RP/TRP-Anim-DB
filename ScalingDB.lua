@@ -126,6 +126,10 @@ local CHAR_TO_ID = {
 		MALE = "4395382",
 		DRAGON = "4207724",
 	},
+	EARTHEN = {
+		FEMALE = "5548259",
+		MALE = "5548261",
+	}
 }
 
 -- Allied races scale matches
@@ -555,6 +559,15 @@ local PLACEMENT_PROPERTIES = {
     [CHAR_TO_ID.ORC.MALE_UPRIGHT] = {
         ["scale"] = 1.21,
     },
+	[CHAR_TO_ID.EARTHEN.MALE] = {
+		["scale"] = 1.75,
+	},
+	[CHAR_TO_ID.EARTHEN.FEMALE] = {
+		["scale"] = 1.66,
+		["offset"] = 0.265,
+	},
+
+
 
 	-- NPCs
 	["123455"] = { -- Draenei child female
@@ -914,6 +927,18 @@ local PLACEMENT_PROPERTIES = {
 	},
 	["1139162"] = { -- Kiya Featherpaw (Boomkin)
 		["scale"] = 1.02,
+	},
+	--endregion
+
+	--region War Within
+	["3952870"] = { -- Thrall
+		["scale"] = 1.3,
+	},
+	["5767091"] = { -- Dagran Thaurissan II
+		["scale"] = 1.87,
+	},
+	["5353632"] = { -- Magni
+		["scale"] = 1.65,
 	},
 	--endregion
 }
