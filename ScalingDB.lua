@@ -556,6 +556,9 @@ local PLACEMENT_PROPERTIES = {
     [CHAR_TO_ID.GOBLIN.FEMALE] = {
         ["scale"] = 2.32,
     },
+	[CHAR_TO_ID.KULTIRAN.MALE] = {
+		["scale"] = 1.31,
+	},
     [CHAR_TO_ID.ORC.MALE_UPRIGHT] = {
         ["scale"] = 1.21,
     },
@@ -567,7 +570,10 @@ local PLACEMENT_PROPERTIES = {
 		["offset"] = 0.265,
 	},
 
-
+	-- Druid forms
+	["1336654"] = {
+		["scale"] = 1.82,
+	},
 
 	-- NPCs
 	["123455"] = { -- Draenei child female
@@ -939,6 +945,20 @@ local PLACEMENT_PROPERTIES = {
 	},
 	["5353632"] = { -- Magni
 		["scale"] = 1.65,
+	},
+	["5484812"] = { -- Speaker Brinthe
+		["scale"] = 1.66,
+		["offset"] = 0.265,
+	},
+	["5836764"] = { -- Explorer's League Supplies
+		["scale"] = 2.97,
+		["offset"] = 0.135,
+	},
+	["5221517"] = { -- Al'kubian (4 long legged nerubian)
+		["scale"] = 1.01,
+	},
+	["5482015"] = { -- Widow Arak'nai (8 legged nerubian)
+		["scale"] = 1.08,
 	},
 	--endregion
 }
