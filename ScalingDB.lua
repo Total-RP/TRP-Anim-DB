@@ -960,6 +960,46 @@ local PLACEMENT_PROPERTIES = {
 	["5482015"] = { -- Widow Arak'nai (8 legged nerubian)
 		["scale"] = 1.08,
 	},
+	["5464690"] = { -- Open Ledger (Book)
+		["scale"] = 1.95,
+		["feet"] = 0.37,
+		["offset"] = 0.125,
+	},
+	["5339030"] = { -- Skitter (Kobold)
+		["scale"] = 1.85,
+	},
+	["5339032"] = { -- Gnawbles (Kobold)
+		["scale"] = 1.85,
+	},
+	["372197"] = { -- Peculiar Fish
+		["scale"] = 2.53,
+		["feet"] = 0.29,
+		["offset"] = 0.245,
+	},
+	["5763562"] = { -- Arathi Orphan (Male)
+		["scale"] = 1.9,
+	},
+	["1622490"] = { -- Keth Wernt (Orphan Male)
+		["scale"] = 1.9,
+	},
+	["5333438"] = { -- Spindle (Baby Nerubian)
+		["scale"] = 3.02,
+		["offset"] = 0.205,
+	},
+	["5348707"] = { -- Anub'azal (Nerubian General)
+		["scale"] = 0.89,
+	},
+	["5550057"] = { -- Danagh's Cogwalker (robot)
+		["scale"] = 2.58,
+	},
+	["5128194"] = { -- Storage Chest
+		["scale"] = 3.41,
+		["feet"] = 0.33,
+		["offset"] = 0.115,
+	},
+	["5241992"] = { -- Y'tekhi
+		["scale"] = 1.27,
+	},
 	--endregion
 }
 
