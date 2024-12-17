@@ -1000,6 +1000,14 @@ local PLACEMENT_PROPERTIES = {
 	["5241992"] = { -- Y'tekhi
 		["scale"] = 1.27,
 	},
+	["2618947"] = { -- Goehi (Coral Ancient)
+		["scale"] = 0.68,
+		["offset"] = 0.205,
+	},
+	["4575036"] = { -- Baer (Snail)
+		["scale"] = 1.42,
+		["offset"] = 0.225,
+	},
 	--endregion
 }
 
