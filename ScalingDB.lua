@@ -1008,6 +1008,9 @@ local PLACEMENT_PROPERTIES = {
 		["scale"] = 1.42,
 		["offset"] = 0.225,
 	},
+	["5764885"] = { -- Monte Gazlowe
+		["scale"] = 2.33,
+	},
 	--endregion
 }
 
