@@ -1011,6 +1011,14 @@ local PLACEMENT_PROPERTIES = {
 	["5764885"] = { -- Monte Gazlowe
 		["scale"] = 2.33,
 	},
+	["5770389"] = { -- Hobgoblin
+		["scale"] = 1.09,
+		["facing"] = 0.73,
+	},
+	["6212355"] = { -- Drill Control Station
+		["scale"] = 2.8,
+		["offset"] = 0.125,
+	},
 	--endregion
 }
 
