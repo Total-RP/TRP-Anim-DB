@@ -1019,6 +1019,15 @@ local PLACEMENT_PROPERTIES = {
 		["scale"] = 2.8,
 		["offset"] = 0.125,
 	},
+	["1572377"] = { -- Locus-Walker
+		["scale"] = 0.89,
+	},
+	["3657310"] = { -- Om'en (Broker Spider)
+		["scale"] = 1.1,
+	},
+	["5159886"] = { -- Xal'atath
+		["offset"] = 0.285,
+	},
 	--endregion
 }
 
