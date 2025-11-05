@@ -129,6 +129,10 @@ local CHAR_TO_ID = {
 	EARTHEN = {
 		FEMALE = "5548259",
 		MALE = "5548261",
+	},
+	HARANIR = {
+		FEMALE = "5422147",
+		MALE = "5422149",
 	}
 }
 
@@ -157,6 +161,12 @@ local CHAR_TO_CHAR = {
 
     [CHAR_TO_ID.DRACTHYR.MALE] = CHAR_TO_ID.BLOOD_ELF.MALE,
     [CHAR_TO_ID.DRACTHYR.FEMALE] = CHAR_TO_ID.HUMAN.FEMALE,
+
+    [CHAR_TO_ID.EARTHEN.MALE] = CHAR_TO_ID.DWARF.MALE,
+    [CHAR_TO_ID.EARTHEN.FEMALE] = CHAR_TO_ID.DWARF.FEMALE,
+
+    [CHAR_TO_ID.HARANIR.MALE] = CHAR_TO_ID.NIGHT_ELF.MALE,
+    [CHAR_TO_ID.HARANIR.FEMALE] = CHAR_TO_ID.NIGHT_ELF.FEMALE,
 }
 
 local DEFAULT_PROPERTIES = {
@@ -185,7 +195,6 @@ local SCALE_MAPPING = {
 	},
 
 	-- ORC FEMALE
-
 	[CHAR_TO_ID.ORC.FEMALE .. "~" .. CHAR_TO_ID.TROLL.FEMALE] = {
 		1.56, -- [1]
 		1.42, -- [2]
@@ -201,6 +210,24 @@ local SCALE_MAPPING = {
 	[CHAR_TO_ID.ORC.FEMALE .. "~" .. CHAR_TO_ID.PANDAREN.MALE] = {
 		1.52, -- [1]
 		1.2, -- [2]
+	},
+	
+	-- ORC MALE UPRIGHT
+	[CHAR_TO_ID.ORC.MALE_UPRIGHT .. "~" .. CHAR_TO_ID.BLOOD_ELF.FEMALE] = {
+		1.23, -- [1]
+		1.57, -- [2]
+	},
+	[CHAR_TO_ID.ORC.MALE_UPRIGHT .. "~" .. CHAR_TO_ID.TAUREN.MALE] = {
+		1.45, -- [1]
+		1.29, -- [2]
+	},
+	[CHAR_TO_ID.ORC.MALE_UPRIGHT .. "~" .. CHAR_TO_ID.ORC.MALE] = {
+		1.33, -- [1]
+		1.57, -- [2]
+	},
+	[CHAR_TO_ID.ORC.MALE_UPRIGHT .. "~" .. CHAR_TO_ID.DWARF.MALE] = {
+		1.31, -- [1]
+		1.86, -- [2]
 	},
 
 	-- BLOOD ELF FEMALE
@@ -540,6 +567,10 @@ local PLACEMENT_PROPERTIES = {
 	[CHAR_TO_ID.HUMAN.FEMALE] = {
 		["offset"] = 0.235,
 	},
+	[CHAR_TO_ID.TAUREN.FEMALE] = {
+		["offset"] = 0.265,
+		["scale"] = 1.27,
+	},
 	[CHAR_TO_ID.PANDAREN.MALE] = {
 		["offset"] = 0.235,
 	},
@@ -560,7 +591,7 @@ local PLACEMENT_PROPERTIES = {
 		["scale"] = 1.31,
 	},
     [CHAR_TO_ID.ORC.MALE_UPRIGHT] = {
-        ["scale"] = 1.21,
+        ["scale"] = 1.31,
     },
 	[CHAR_TO_ID.EARTHEN.MALE] = {
 		["scale"] = 1.75,
@@ -573,6 +604,12 @@ local PLACEMENT_PROPERTIES = {
 	-- Druid forms
 	["1336654"] = {
 		["scale"] = 1.82,
+	},
+	["5927360"] = { -- Haranir cat form (?)
+		["offset"] = 0.305,
+	},
+	["6218499"] = { -- Haranir bear form (?)
+		["offset"] = 0.305,
 	},
 
 	-- NPCs
@@ -1027,6 +1064,90 @@ local PLACEMENT_PROPERTIES = {
 	},
 	["5159886"] = { -- Xal'atath
 		["offset"] = 0.285,
+	},
+	--endregion
+
+	--region Midnight
+	["6730408"] = { -- Lothraxion
+		["scale"] = 0.91,
+		["offset"] = 0.295,
+	},
+	["5909233"] = { -- Gidwin Goldbraids (cocoon)
+		["scale"] = 2.94,
+		["offset"] = 0.155,
+	},
+	["3604103"] = { -- Luma (spaniel dog)
+		["scale"] = 2.86,
+	},
+	["6033620"] = { -- Stained Tool Rack
+		["scale"] = 4.47,
+		["offset"] = 0.125,
+	},
+	["6026041"] = { -- Suspicious Urn
+		["scale"] = 3.1,
+		["offset"] = 0.145,
+	},
+	["6025931"] = { -- Well-Loved Tome
+		["scale"] = 1.56,
+		["offset"] = 0.145,
+	},
+	["6254251"] = { -- Ani (Amani female kid)
+		["scale"] = 2.46,
+	},
+	["6254248"] = { -- Loa Speaker Tobui (Amani male kid)
+		["scale"] = 2.46,
+	},
+	["6213760"] = { -- Jan'alai
+		["scale"] = 0.7,
+		["offset"] = 0.295,
+	},
+	["6237646"] = { -- Halazzi
+		["scale"] = 0.81,
+		["offset"] = 0.225,
+	},
+	["6647868"] = { -- Danul (Haranir male kid)
+		["scale"] = 2.46,
+	},
+	["6647866"] = { -- Oorla (Haranir female kid)
+		["scale"] = 2.46,
+	},
+	["6240655"] = { -- Meeka (flower people)
+		["scale"] = 1.21,
+	},
+	["6181816"] = { -- Decimus (Domanaar)
+		["scale"] = 1.1,
+	},
+	["6181818"] = { -- Perodius (Domanaar)
+		["scale"] = 1.1,
+	},
+	["1028949"] = { -- Ariok (big orc)
+		["scale"] = 0.81,
+	},
+	["6210900"] = { -- Research Console (Voidstorm)
+		["scale"] = 4.12,
+		["offset"] = 0.145,
+	},
+	["6705352"] = { -- Hospitus (Voidwalker)
+		["scale"] = 1.82,
+	},
+	["7127604"] = { -- Tocho Cloudhide (Peaceloving Tauren)
+		["scale"] = 1.23,
+	},
+	["4066013"] = { -- Furgh (HD Furbolg)
+		["scale"] = 1.03,
+	},
+	["5865739"] = { -- Dundun (Loa of Abundance, molerat)
+		["scale"] = 2.41,
+	},
+	["1719397"] = { -- Trishe (tortollan kid)
+		["scale"] = 2.46,
+	},
+	["5140839"] = { -- Kulzi (giant pangolin)
+		["offset"] = 0.385,
+	},
+	["6075562"] = { -- Zungam's Anvil (amani anvil/chest)
+		["scale"] = 2.01,
+		["offset"] = 0.125,
 	},
 	--endregion
 }
