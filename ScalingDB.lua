@@ -550,7 +550,7 @@ local PLACEMENT_PROPERTIES = {
 	},
 	[CHAR_TO_ID.DWARF.MALE] = {
 		["offset"] = 0.185,
-        ["scale"] = 1.62,
+        ["scale"] = 1.86,
 	},
 	[CHAR_TO_ID.DWARF.FEMALE] = {
 		["offset"] = 0.255,
@@ -567,10 +567,16 @@ local PLACEMENT_PROPERTIES = {
 	[CHAR_TO_ID.HUMAN.FEMALE] = {
 		["offset"] = 0.235,
 	},
+    [CHAR_TO_ID.DRAENEI.MALE] = {
+        ["scale"] = 1.35,
+    },
 	[CHAR_TO_ID.TAUREN.FEMALE] = {
 		["offset"] = 0.265,
 		["scale"] = 1.27,
 	},
+    [CHAR_TO_ID.TROLL.MALE] = {
+        ["scale"] = 1.65,
+    },
 	[CHAR_TO_ID.PANDAREN.MALE] = {
 		["offset"] = 0.235,
 	},
@@ -601,8 +607,8 @@ local PLACEMENT_PROPERTIES = {
 		["offset"] = 0.265,
 	},
 
-	-- Druid forms
-	["1336654"] = {
+	-- Class forms
+	["1336654"] = { -- Some druid form
 		["scale"] = 1.82,
 	},
 	["5927360"] = { -- Haranir cat form (?)
@@ -610,6 +616,10 @@ local PLACEMENT_PROPERTIES = {
 	},
 	["6218499"] = { -- Haranir bear form (?)
 		["offset"] = 0.305,
+	},
+	
+	["926251"] = { -- Ghost Wolf
+		["scale"] = 1.88,
 	},
 
 	-- NPCs
@@ -1068,6 +1078,9 @@ local PLACEMENT_PROPERTIES = {
 	--endregion
 
 	--region Midnight
+	["3049179"] = { -- Valeera
+		["offset"] = 0.275,
+	},
 	["6730408"] = { -- Lothraxion
 		["scale"] = 0.91,
 		["offset"] = 0.295,
